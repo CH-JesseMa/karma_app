@@ -36,10 +36,13 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'capybara'
+  gem 'rails-erd'
+  gem 'factory_girl_rails'
+  gem 'annotate'
+  gem 'jasmine'
+  gem 'selenium-webdriver'
 
 end
-
-
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
