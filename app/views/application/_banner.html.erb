@@ -2,7 +2,7 @@
 	<li><a href="/">Home</a></li>
 	<% if logged_in? %>
 		<li><a href="posts/new">Add a new post!</a></li>
-		<li>Welcome <%= current_user.user_name %> (<%= current_user.karma_points %> points)</li>
+		<li>Welcome <%= current_user.user_name %> (<%= current_user.points %> points)</li>
 	<% else %>
 		<li><a href="users/new">Register My Account</a></li>
 		<li><a href="login">Sign In</a></li>
