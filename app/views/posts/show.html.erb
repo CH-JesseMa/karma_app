@@ -8,7 +8,13 @@
   <%= @post.content %>
 </p>
 
+<p>
+  <%= @post.type %>
+</p>
 
+<p>
+  <img src=<%= @post.image_url %>>
+</p>
 
 
 <%= link_to 'Back to List', posts_path %> | <%= link_to 'Edit', edit_post_path(@post) %>
