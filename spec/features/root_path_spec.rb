@@ -18,23 +18,6 @@ feature "Signing in" do
   end
 end
 
-
-# describe 'log in' do
-#   visit session_new_path
-#   fill_in "Email", :with => "gladiator@gmail.com"
-#   fill_in "Password", :with => "maximus"
-#   click_button "Login"
-#   end
-# end
-
-# describe 'logged in' do
-#   it "should have a link to logout" do
-#     visit new_user
-#     expect(page).to have_content("logout")
-#   end
-# end
-
-
   # docs:
   # http://rubydoc.info/github/jnicklas/capybara/master
 
@@ -51,5 +34,20 @@ end
 #     click_button "Create Widget"
 
 #     expect(page).to have_text("Widget was successfully created.")
+#   end
+# end
+
+# describe 'log in' do
+#   visit session_new_path
+#   fill_in "Email", :with => "gladiator@gmail.com"
+#   fill_in "Password", :with => "maximus"
+#   click_button "Login"
+#   end
+# end
+
+# describe 'logged in' do
+#   it "should have a link to logout" do
+#     visit new_user
+#     expect(page).to have_content("logout")
 #   end
 # end

@@ -12,5 +12,5 @@ describe User do
   it { should ensure_length_of(:password).is_at_least(8).is_at_most(16) }
 end
 
-shoulda matchers:
-http://rubydoc.info/github/thoughtbot/shoulda-matchers/master/frames
+# shoulda matchers:
+# http://rubydoc.info/github/thoughtbot/shoulda-matchers/master/frames
