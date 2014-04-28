@@ -10,7 +10,7 @@
   <% @posts.each do |post| %>
     <tr>
       <td><%= link_to post.title, post_path(post) %></td>
-      <td><%= link_to post.content, post_path(post) %></td>
+      <td><%= post.content %></td>
       <td><img src=<%= post.image_url %>>
       <td><%= post.type %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
