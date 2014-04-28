@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :transactions
   resources :comments
+  resources :posts
 
   get  "/login"  => "session#new"
   post "/session" => "session#create"
