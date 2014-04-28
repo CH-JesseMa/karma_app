@@ -2,15 +2,12 @@ Rails.application.routes.draw do
 
   resources :users
   resources :transactions
-<<<<<<< HEAD
   resources :comments
-  resources :posts
   resources :points_transfer, only: [:new, :create]
-=======
+
   resources :posts do
     resources :comments
   end
->>>>>>> delete_post
 
   get  "/login"  => "session#new"
   post "/session" => "session#create"
