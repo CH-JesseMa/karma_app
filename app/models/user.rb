@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :transactions
+  has_many :comments
 
   has_secure_password
 

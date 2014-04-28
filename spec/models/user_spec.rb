@@ -3,6 +3,8 @@ require 'spec_helper'
 describe User do
   # associations
   it { should have_many(:posts) }
+  it { should have_many(:transactions) }
+  it { should have_many(:comments) }
   # authentication
   it { should have_secure_password }
   it { should validate_uniqueness_of(:email) }
