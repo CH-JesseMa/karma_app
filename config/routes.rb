@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :users
-  resources :user_sessions
 
   get  "/login"  => "session#new"
   post "/session" => "session#create"
@@ -21,11 +20,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
-  # sessions
-  get  "/session/new"  => "session#new"
-  post "/session"      => "session#create"
-  get  "/logout"       => "session#destroy"
 
   # Example resource route with options:
   #   resources :products do

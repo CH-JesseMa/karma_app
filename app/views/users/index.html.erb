@@ -2,16 +2,16 @@
 
 <% if logged_in? %>
 
-  <p>Hi, <%= current_user.name %>!</p><br>
+  <p>Hi, <%= current_user.user_name %>!</p><br>
   <%= link_to "logout", logout_path %>
 
-  <% if current_user.admin %>
+<!--   <%# if current_user.admin %>
     <strong>Admin things</strong>:
-  <% end %>
+  <%# end %> -->
 
 <% else %>
 
 <%= link_to "Sign Up!", new_user_path %>
-<%= link_to "Login", session_new_path %>
+<%= link_to "Login", login_path %>
 
 <% end %>

@@ -81,7 +81,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (5.3.3)
-    multi_json (1.9.2)
+    multi_json (1.9.3)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     pg (0.17.1)
@@ -188,11 +188,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
   annotate
-=======
   bcrypt (~> 3.1.7)
->>>>>>> 42de4d9c834f15ad75f4d730763a9ef127dcd733
   capybara
   coffee-rails (~> 4.0.0)
   factory_girl_rails
