@@ -1,4 +1,6 @@
-<%= form_for :post, url: posts_path do |f| %>
+<h1>Editing Your Post</h1>
+
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
   <% if @post.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@post.errors.count, "error") %> kept
@@ -20,21 +22,9 @@
     <%= f.text_area :content %>
   </p>
 
-<%= radio_button_tag(:post, "I'm offering services") %>
-<%= label_tag(:post, "I'm offering services") %>
-<%= radio_button_tag(:post, "I'm requesting services") %>
-<%= label_tag(:post, "I'm requesting services") %>
-
-<%= link_to 'Back', posts_path %>
-
   <p>
     <%= f.submit %>
   </p>
 <% end %>
 
-
-
-
-
-
-
+<%= link_to 'Back', posts_path %>
