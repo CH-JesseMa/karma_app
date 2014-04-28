@@ -12,7 +12,7 @@ class UserSessionsController < ApplicationController
     if user && user.authenticate(params[:password])
     session[:user_id] = user.id
     flash[:success] = "thanks for logging in!"
-    redirect_to subjects_path
+    redirect_to("/")
     else
       flash[:error] = "sorry we couldn't log you in"
       render(:new)
@@ -24,3 +24,4 @@ class UserSessionsController < ApplicationController
     redirect_to(root_path)
   end
 end
+
