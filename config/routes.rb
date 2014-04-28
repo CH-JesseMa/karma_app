@@ -8,16 +8,19 @@ Rails.application.routes.draw do
 
   resources :users
   resources :transactions
-  resources :comments
+  resources :posts
   resources :points_transfer, only: [:new, :create]
+
+  resources :posts do
+    resources :comments
+  end
+
 
   get  "/login"  => "session#new"
   post "/session" => "session#create"
   get  "/logout"  => "session#destroy"
 
-  resources :posts do
-    resources :comments
-  end
+
 end
 
 # sweet sweet routes:
