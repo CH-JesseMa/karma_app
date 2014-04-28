@@ -12,11 +12,8 @@ A place where goods or services are exchanged between friends or your community.
 
 https://www.pivotaltracker.com/s/projects/1067174#
 
-## Travis
-
 [![Build Status](https://travis-ci.org/CH-JesseMa/karma_app.svg?branch=develop)](https://travis-ci.org/CH-JesseMa/karma_app)
 
-========================
 ========================
 
 ## commands for rails 3.2.12:
