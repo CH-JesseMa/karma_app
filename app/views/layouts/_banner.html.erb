@@ -1,0 +1,10 @@
+<ul>
+	<li><%= link_to root_path "Home" %></li>
+	<% if logged_in? %>
+		<li><%= link_to new_post_path, "Add a new post!" %></li>
+		<li>Welcome <%= current_user.user_name %> (<%= current_user.karma_points %> points)</li>
+	<% else %>
+		<li><%= link_to new_user_path, "Register My Account" %></li>
+		<li><%= link_to login_path, "Sign In" %></li>
+	<% end %>
+</ul>
