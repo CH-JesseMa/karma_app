@@ -28,5 +28,16 @@ class User < ActiveRecord::Base
   def downcase_email   #method to downcase an email if user uses capitals
     self.email = email.downcase
   end
+
+  def transfer_points(recipient, amount)
+    donor_points = self.karma_points
+    self.karma_points = donor_points - amount
+    self.save
+
+    recipient_points = recipient.karma_points
+    recipient.karma_points = recipient_points + amount
+    recipient.save
+  end
+
 end
 

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :transactions
   resources :comments
   resources :posts
+  resources :points_transfer, only: [:new, :create]
 
   get  "/login"  => "session#new"
   post "/session" => "session#create"
