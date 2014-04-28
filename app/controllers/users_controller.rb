@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   def index
   end
 
-  # GET /users/new
   def new
     @user = User.new
   end
