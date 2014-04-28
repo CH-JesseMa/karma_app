@@ -3,7 +3,7 @@
 <% if logged_in? %>
 
   <p>Hi, <%= current_user.user_name %>!</p><br>
-  <%= link_to "logout", logout_path %>
+  <%= link_to "Logout", logout_path %>
 
   <% if current_user.is_admin %>
     <strong>Admin things</strong>:
