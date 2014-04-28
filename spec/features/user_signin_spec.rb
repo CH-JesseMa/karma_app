@@ -9,20 +9,35 @@ end
 
 feature "Signing in" do
   scenario "Signing in with correct credentials" do
-    person = User.create(name: "russ", email: "gladiator@gmail.com", password: "maximus", password_confirmation: "maximus")
-    visit '/session/new'
+    user = User.create(user_name: "Spaniard", email: "gladiator@gmail.com", password: "maximus", password_confirmation: "maximus")
+    visit '/login'
     fill_in 'Email', :with => 'gladiator@gmail.com'
     fill_in 'Password', :with => 'maximus'
     click_button 'Login'
-    expect(page).to have_selector 'a', text: "logout"
+    expect(page).to have_selector 'a', text: "Logout"
   end
 end
 
-  # docs:
-  # http://rubydoc.info/github/jnicklas/capybara/master
+feature "Signing out" do
+  scenario "logging out returns you to the login page" do
+    user = User.create(user_name: "Spaniard", email: "gladiator@gmail.com", password: "maximus", password_confirmation: "maximus")
+    visit '/login'
+    fill_in 'Email', :with => 'gladiator@gmail.com'
+    fill_in 'Password', :with => 'maximus'
+    click_button 'Login'
+    visit '/'
+    click_link 'Logout'
+    expect(page).to have_selector 'a', text: "Sign Up!"
+  end
+end
 
-  # capybara cheetsheet:
-  # http://learn.thoughtbot.com/test-driven-rails-resources/capybara.pdf
+################
+
+# docs:
+# http://rubydoc.info/github/jnicklas/capybara/master
+
+# capybara cheetsheet:
+# http://learn.thoughtbot.com/test-driven-rails-resources/capybara.pdf
 
 # example
 

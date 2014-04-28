@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428164711) do
+ActiveRecord::Schema.define(version: 20140428204329) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +34,8 @@ ActiveRecord::Schema.define(version: 20140428164711) do
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "transaction_id"
+    t.integer  "user_id"
   end
 
   create_table "transactions", force: true do |t|
@@ -56,11 +59,12 @@ ActiveRecord::Schema.define(version: 20140428164711) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "location"
-    t.integer  "karma_points"
     t.boolean  "is_admin"
     t.string   "profile"
     t.string   "image_url"
     t.string   "skills"
+    t.integer  "comment_id"
+    t.integer  "points",          default: 10
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
