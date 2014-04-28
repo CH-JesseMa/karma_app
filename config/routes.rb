@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get "/contact" => "welcome#contact"
+  get "/faq" => "welcome#faq"
+  get "/legal" => "welcome#legal"
+
   resources :users
   resources :transactions
   resources :posts
