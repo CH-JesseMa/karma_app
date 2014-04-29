@@ -4,7 +4,6 @@
 #
 #  id             :integer          not null, primary key
 #  karma_value    :integer
-#  is_open        :boolean
 #  post_type      :string(255)
 #  title          :string(255)
 #  content        :string(255)
@@ -13,6 +12,7 @@
 #  updated_at     :datetime
 #  transaction_id :integer
 #  user_id        :integer
+#  is_open        :boolean          default(TRUE)
 #
 
 require 'spec_helper'
