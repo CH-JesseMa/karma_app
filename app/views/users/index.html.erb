@@ -4,13 +4,17 @@
 
 <div id="members_wrapper">
   <div class="members">
+
     <h1>Our Members</h1>
 
-      <ul>
-        <% @users.each do |user| %>
-      <li><%= link_to(user.name, user_path(user)) %></li>
+    <ul>
+      <% @users.each do |user| %>
+        <li>
+          <%= link_to(user.name, user_path(user)) %>
+        </li>
       <% end %>
-      </ul>
+    </ul>
+
   </div><!-- members -->
 </div><!-- members wrapper   -->
 
