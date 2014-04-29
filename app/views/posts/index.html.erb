@@ -14,8 +14,7 @@
       <td><img src=<%= post.image_url %>>
       <td><%= post.type %></td>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Delete', post_path(post), method: :delete %></td>
-      <!-- still need to get delete working!!!!!! -->
+      <td><%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %></td>
     </tr>
   <% end %>
 </table>
