@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       redirect_to @post
@@ -44,9 +44,26 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :image_url, :type)
+    params.require(:post).permit(
+                   :title,
+                   :content,
+                   :image_url,
+                   :user_id,
+                   :karma_value,
+                   :status
+                  )
   end
-
 end
 
+  # create_table "posts", force: true do |t|
+  #   t.integer  "karma_value"
+  #   t.boolean  "status"
+  #   t.string   "type"
+  #   t.string   "title"
+  #   t.string   "content"
+  #   t.string   "image_url"
+  #   t.datetime "created_at"
+  #   t.datetime "updated_at"
+  #   t.integer  "transaction_id"
+  #   t.integer  "user_id"
 
