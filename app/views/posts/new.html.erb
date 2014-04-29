@@ -1,5 +1,7 @@
 <h2>Add Your Posting</h2>
+
 <%= form_for :post, url: posts_path do |f| %>
+
   <% if @post.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@post.errors.count, "error") %> kept
@@ -11,6 +13,7 @@
     </ul>
   </div>
   <% end %>
+
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -24,13 +27,18 @@
     <%= f.label :image_url, "Add an image..." %><br>
     <%= f.text_field :image_url %>
   </p>
+  <p>
+  <%= f.label(:karma_value, "Amount of Points") %>
+  <%= f.number_field(:karma_value) %>
+  </p>
 
-<%= radio_button_tag(:type, "I'm offering services") %>
-<%= label_tag(:type, "I'm offering services") %>
-<%= radio_button_tag(:type, "I'm requesting services") %>
-<%= label_tag(:type, "I'm requesting services") %>
 
-<%= link_to 'Back', posts_path %>
+  <%= f.radio_button(:type, "I'm offering services") %>
+  <%= f.label(:type, "I'm offering services") %>
+  <%= f.radio_button(:type, "I'm requesting services") %>
+  <%= f.label(:type, "I'm requesting services") %>
+
+  <%= link_to 'Back', posts_path %>
 
   <p>
     <%= f.submit %>

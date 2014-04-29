@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :transactions
-  resources :posts
   resources :points_transfer, only: [:new, :create]
 
   resources :posts do
@@ -25,8 +24,11 @@ end
 
 # sweet sweet routes:
 
-#                Prefix Verb   URI Pattern                                 Controller#Action
+#              Prefix Verb   URI Pattern                                 Controller#Action
 #                  root GET    /                                           welcome#index
+#               contact GET    /contact(.:format)                          welcome#contact
+#                   faq GET    /faq(.:format)                              welcome#faq
+#                 legal GET    /legal(.:format)                            welcome#legal
 #                 users GET    /users(.:format)                            users#index
 #                       POST   /users(.:format)                            users#create
 #              new_user GET    /users/new(.:format)                        users#new
@@ -43,19 +45,8 @@ end
 #                       PATCH  /transactions/:id(.:format)                 transactions#update
 #                       PUT    /transactions/:id(.:format)                 transactions#update
 #                       DELETE /transactions/:id(.:format)                 transactions#destroy
-#              comments GET    /comments(.:format)                         comments#index
-#                       POST   /comments(.:format)                         comments#create
-#           new_comment GET    /comments/new(.:format)                     comments#new
-#          edit_comment GET    /comments/:id/edit(.:format)                comments#edit
-#               comment GET    /comments/:id(.:format)                     comments#show
-#                       PATCH  /comments/:id(.:format)                     comments#update
-#                       PUT    /comments/:id(.:format)                     comments#update
-#                       DELETE /comments/:id(.:format)                     comments#destroy
 # points_transfer_index POST   /points_transfer(.:format)                  points_transfer#create
 #   new_points_transfer GET    /points_transfer/new(.:format)              points_transfer#new
-#                 login GET    /login(.:format)                            session#new
-#               session POST   /session(.:format)                          session#create
-#                logout GET    /logout(.:format)                           session#destroy
 #         post_comments GET    /posts/:post_id/comments(.:format)          comments#index
 #                       POST   /posts/:post_id/comments(.:format)          comments#create
 #      new_post_comment GET    /posts/:post_id/comments/new(.:format)      comments#new
@@ -72,3 +63,6 @@ end
 #                       PATCH  /posts/:id(.:format)                        posts#update
 #                       PUT    /posts/:id(.:format)                        posts#update
 #                       DELETE /posts/:id(.:format)                        posts#destroy
+#                 login GET    /login(.:format)                            session#new
+#               session POST   /session(.:format)                          session#create
+#                logout GET    /logout(.:format)                           session#destroy
