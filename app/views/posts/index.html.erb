@@ -6,7 +6,7 @@
     <th>Description</th>
   </tr>
 
-  <!-- below has the post title and content be links, may want to change content being a link to just plain text later? -->
+
   <% @posts.each do |post| %>
     <tr>
       <td><%= link_to post.title, post_path(post) %></td>

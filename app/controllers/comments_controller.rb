@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     @comment.destroy
-    redirect_to post_path(@post)
+    redirect_to posts_path
   end
 
   private
@@ -33,3 +33,5 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:text)
     end
 end
+
+
