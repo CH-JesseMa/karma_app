@@ -10,12 +10,12 @@ class SessionController < ApplicationController
     user = User.find_by(email: params[:email])
 
     if user && user.authenticate(params[:password])
-    session[:user_id] = user.id
-    flash[:success] = "thanks for logging in!"
-    redirect_to("/")
+      session[:user_id] = user.id
+      flash[:success] = "thanks for logging in!"
+      redirect_to("/")
     else
-      flash[:error] = "sorry we couldn't log you in"
-      render(:new)
+      flash[:error] = "sorry we couldn't log you in, try again maybe!"
+      redirect_to login_path
    end
   end
 
