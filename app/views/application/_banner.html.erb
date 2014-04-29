@@ -2,9 +2,10 @@
 	<li><a href="/">Home</a></li>
 	<% if logged_in? %>
 		<li><a href="posts/new">Add a new post!</a></li>
-		<li>Welcome <%= current_user.user_name %> (<%= current_user.points %> points)</li>
+		<li>Welcome <%= current_user.user_name %>! (<%= current_user.points %> points)</li>
+     <%= link_to "Logout", logout_path %>
 	<% else %>
-		<li><a href="users/new">Register My Account</a></li>
-		<li><a href="login">Sign In</a></li>
+    <%= link_to "Sign Up!", new_user_path %>
+		<%= link_to "Login", login_path %>
 	<% end %>
 </ul>

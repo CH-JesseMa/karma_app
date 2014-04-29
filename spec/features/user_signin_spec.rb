@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'visit root' do
   it 'should have content' do
     visit root_path
-    expect(page).to have_content("2000K")
+    expect(page).to have_content("Karmacopia")
   end
 end
 
