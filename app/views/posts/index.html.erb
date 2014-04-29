@@ -16,7 +16,7 @@
       <td><%= post.content %></td>
       <td><img src=<%= post.image_url %>>
       <td><%= post.post_type %></td>
-         <% if current_user.is_admin || current_user.id == post.user_id %>
+         <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
       <td><%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %></td>
     </tr>
