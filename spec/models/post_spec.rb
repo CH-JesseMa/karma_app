@@ -4,8 +4,8 @@
 #
 #  id             :integer          not null, primary key
 #  karma_value    :integer
-#  status         :boolean
-#  type           :string(255)
+#  is_open        :boolean
+#  post_type      :string(255)
 #  title          :string(255)
 #  content        :string(255)
 #  image_url      :string(255)
