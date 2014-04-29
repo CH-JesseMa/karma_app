@@ -1,11 +1,10 @@
 <ul>
-	<li><a href="/">Home</a></li>
+	<li><%= link_to "Home", root_path %></li>
 	<% if logged_in? %>
-		<li><a href="posts/new">Add a new post!</a></li>
-		<li>Welcome <%= current_user.user_name %>! (<%= current_user.points %> points)</li>
-     <%= link_to "Logout", logout_path %>
+		<li><%= link_to "Add a new post!", new_post_path %></li>
+		<li>Welcome <%= current_user.user_name %> (<%= current_user.points %> points)</li>
 	<% else %>
-    <%= link_to "Sign Up!", new_user_path %>
-		<%= link_to "Login", login_path %>
+		<li><%= link_to new_user_path, "Register My Account" %></li>
+		<li><%= link_to login_path, "Sign In" %></li>
 	<% end %>
 </ul>
