@@ -7,18 +7,16 @@
   </tr>
 
   <% @posts.each do |post| %>
-    <% if post.is_open == true %>
     <tr>
       <td><%= link_to post.title, post_path(post) %></td>
       <td><%= post.content %></td>
-      <td><img src=<%= post.image_url %>>
+      <td><%= image_tag post.image_url %></td>
       <td><%= post.type %></td>
-         <% if current_user.is_admin || current_user.id == post.user_id %>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %></td>
+      <% if current_user.is_admin || current_user.id == post.user_id %>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %></td>
+      <% end %>
     </tr>
-        <% end %>
-    <% end %>
   <% end %>
 </table>
 
