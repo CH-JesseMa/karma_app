@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429162333) do
+ActiveRecord::Schema.define(version: 20140429165931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20140429162333) do
 
   create_table "posts", force: true do |t|
     t.integer  "karma_value"
-    t.boolean  "is_open"
     t.string   "post_type"
     t.string   "title"
     t.string   "content"
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140429162333) do
     t.datetime "updated_at"
     t.integer  "transaction_id"
     t.integer  "user_id"
+    t.boolean  "is_open",        default: true
   end
 
   create_table "transactions", force: true do |t|
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140429162333) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "post_id"
+    t.boolean  "is_complete",        default: false
   end
 
   create_table "users", force: true do |t|
