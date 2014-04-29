@@ -1,11 +1,14 @@
 <div id="posts_wrapper">
   <div class="posts">
+
     <h1>Listing Posts</h1>
+
     <table>
       <tr>
         <th>Title</th>
         <th>Description</th>
       </tr>
+
       <% @posts.each do |post| %>
     <% if post.is_open == true %>
     <tr>
@@ -20,6 +23,7 @@
         <% end %>
     <% end %>
   <% end %>
+
     </table>
   </div><!-- posts -->
 </div><!-- posts wrapper   -->
