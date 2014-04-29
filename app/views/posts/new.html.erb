@@ -25,18 +25,18 @@
     <%= f.text_field :image_url %>
   </p>
 
-<%= radio_button_tag(:type, "I'm offering services") %>
-<%= label_tag(:type, "I'm offering services") %>
-<%= radio_button_tag(:type, "I'm requesting services") %>
-<%= label_tag(:type, "I'm requesting services") %>
+<%= f.radio_button(:type, "Im offering services") %>
+<%= f.label(:type, "I'm offering services") %>
+<%= f.radio_button(:type, "Im requesting services") %>
+<%= f.label(:type, "I'm requesting services") %>
 
-<%= link_to 'Back', posts_path %>
 
   <p>
     <%= f.submit %>
   </p>
 <% end %>
 
+<%= link_to 'Back', posts_path %>
 
 
 

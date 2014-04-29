@@ -1,3 +1,35 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#Karma_app_steps{
+  background-color: white;
+  width: 60%;
+}
+
+#Karma_app_steps .steps{
+  font-size: 30px;
+  font-family: georgia;
+}
+
+#sidebar_wrapper{
+  position: relative;
+}
+
+.sidebar{
+    background-color: white;
+    position: absolute;
+    height: 100%;
+}
+
+#title{
+  font-family: georgia;
+  font-size: 40px;
+}
+
+.sidebar li {
+  font-size: 30px;
+  list-style-type: none;
+  padding: 5px;
+}

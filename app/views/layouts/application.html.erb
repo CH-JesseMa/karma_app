@@ -2,14 +2,22 @@
 <html>
 <head>
   <title>KarmaApp</title>
-  <!-- for some reason the line below is breaking rails? -->
-<!--   <%# stylesheet_link_tag    'application', media: 'all' => true %> -->
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag 'application' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrapper">
+      <div class="top-container">
+        <div class="top-content generic-content">
 
 	<%= render 'banner' %>
+
+
+      </div> <!-- top-content -->
+    </div><!-- top-container -->
+
+
 
 <!--      <%# flash.each do |name, msg| -%>
       <%#= content_tag :div, msg, class: name %>
@@ -31,8 +39,8 @@
 <%= yield %>
 
 	<%= render 'sidebar' %>
-	
-</body>
+    </div> <!-- wrapper -->
+  </body>
 </html>
 
 

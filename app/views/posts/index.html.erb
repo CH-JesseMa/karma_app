@@ -1,22 +1,28 @@
-<h1>Listing Posts</h1>
+<div id="posts_wrapper">
+  <div class="posts">
+    <h1>Listing Posts</h1>
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-  </tr>
+
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, post_path(post) %></td>
+          <td><%= post.content %></td>
+          <td><img src=<%= post.image_url %>>
+          <td><%= post.type %></td>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div><!-- posts -->
+</div><!-- posts wrapper   -->
 
 
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= link_to post.title, post_path(post) %></td>
-      <td><%= post.content %></td>
-      <td><img src=<%= post.image_url %>>
-      <td><%= post.type %></td>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %></td>
-    </tr>
-  <% end %>
-</table>
+
 
 
