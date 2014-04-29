@@ -1,6 +1,7 @@
 <h1>Editing Your Post</h1>
 
 <%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+
   <% if @post.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@post.errors.count, "error") %> kept
@@ -12,6 +13,7 @@
     </ul>
   </div>
   <% end %>
+
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>

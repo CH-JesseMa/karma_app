@@ -1,5 +1,5 @@
 <%= form_tag("/points_transfer", method: "POST") do %>
-  <%= label_tag(:recipient, "Recipient") %>
+  <%= label_tag(:recipient, "User Name") %>
   <%= text_field_tag(:recipient) %>
   <%= label_tag(:amount, "Amount of Points") %>
   <%= number_field_tag(:amount) %>

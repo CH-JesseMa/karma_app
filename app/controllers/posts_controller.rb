@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       redirect_to @post
@@ -44,9 +44,18 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :image_url, :post_type)
+    params.require(:post).permit(
+                   :title,
+                   :content,
+                   :image_url,
+                   :user_id,
+                   :karma_value,
+                   :is_open,
+                   :karma_value,
+                   :post_type,
+                   :transaction_id
+                  )
   end
-
 end
 
 
