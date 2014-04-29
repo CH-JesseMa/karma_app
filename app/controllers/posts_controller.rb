@@ -50,14 +50,14 @@ class PostsController < ApplicationController
                    :image_url,
                    :user_id,
                    :karma_value,
-                   :status
+                   :is_open
                   )
   end
 end
 
   # create_table "posts", force: true do |t|
   #   t.integer  "karma_value"
-  #   t.boolean  "status"
+  #   t.boolean  "is_open"
   #   t.string   "type"
   #   t.string   "title"
   #   t.string   "content"
