@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428204329) do
+ActiveRecord::Schema.define(version: 20140429192234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140428204329) do
   create_table "posts", force: true do |t|
     t.integer  "karma_value"
     t.boolean  "status"
-    t.string   "type"
+    t.string   "post_type"
     t.string   "title"
     t.string   "content"
     t.string   "image_url"
