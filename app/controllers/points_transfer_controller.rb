@@ -11,7 +11,7 @@ class PointsTransferController < ApplicationController
 
 		if donor && recipient && amount > 0
 			donor.transfer_points(recipient, amount)
-			redirect_to user_path, notice: "You have successfully transferred points to #{recipient.user_name}!"
+			redirect_to root_path notice: "You have successfully transferred points to #{recipient.user_name}!"
 		else
 			render :new, notice: "Oops, something went wrong.  Try again!"
 		end

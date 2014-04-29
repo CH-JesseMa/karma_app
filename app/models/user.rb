@@ -38,12 +38,10 @@ class User < ActiveRecord::Base
   end
 
   def transfer_points(recipient, amount)
-    donor_points = self.karma_points
-    self.karma_points = donor_points - amount
+    self.points -= amount
     self.save
 
-    recipient_points = recipient.karma_points
-    recipient.karma_points = recipient_points + amount
+    recipient.points += amount 
     recipient.save
   end
 
