@@ -13,6 +13,7 @@
 #  point_value        :integer
 #  created_at         :datetime
 #  updated_at         :datetime
+#  post_id            :integer
 #
 
 require 'spec_helper'
