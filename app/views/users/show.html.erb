@@ -11,6 +11,12 @@
       <p><%= @user.profile %></p>
       <p><%= @user.skills %></p>
 
+      <!-- shows all the users postings on their profile page -->
+      <% @user.posts.each do |post| %>
+      <%= link_to post.title, post_path(post) %>,
+      (<%= post.karma_value %> Karma Points) <br>
+                  <% end %>
+
       <% if @user == current_user %>
       	<%= link_to 'Edit', edit_user_path(@user) %>
       <% end %>
