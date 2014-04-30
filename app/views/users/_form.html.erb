@@ -1,4 +1,5 @@
 <div class="sign_up_wrapper">
+  <h1>Sign Up For Karma App</h1>
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -12,21 +13,37 @@
       </div>
     <% end %>
 
-  <div class="sign_up">
-    <h1>Register (<%= link_to 'Back', users_path %>)</h1>
-      <div class="field">
-        <%= f.label :user_name, "User Name" %><br>
-        <%= f.text_field :user_name %><br>
+<div class="sign_up">
+  <div class="field">
+    <%= f.label :user_name, "User Name*" %><br>
+    <%= f.text_field :user_name, :value =>  "e.g. handyman123" %><br>
 
-        <%= f.label :email, "Email" %><br>
-        <%= f.text_field :email %><br>
+    <%= f.label :name, "Name*" %><br>
+    <%= f.text_field :name, :value => "e.g. John Smith" %><br>
 
-        <%= f.label :password, "Password" %><br>
-        <%= f.password_field :password %><br>
+    <%= f.label :email, "Email*" %><br>
+    <%= f.text_field :email, :value => "e.g. handyman123@gmail.com" %><br>
 
-        <%= f.label :password_confirmation, "Confirm Password" %><br>
-        <%= f.password_field :password_confirmation %><br>
-      </div>
+    <%= f.label :password, "Password*" %><br>
+    <%= f.password_field :password %><br>
+
+    <%= f.label :password_confirmation, "Confirm Password*" %><br>
+    <%= f.password_field :password_confirmation %><br>
+  </div>
+  <div class="field">
+    <%= f.label :location, "Location*" %><br>
+    <%= f.text_field :location, :value => "e.g. New York, NY" %><br>
+
+    <%= f.label :image_url, "Profile Image URL" %><br>
+    <%= f.text_field :image_url, :value => "e.g. http://africasacountry.com/wp-content/uploads/2014/02/William-Onyeabor.jpg" %><br>
+
+    <%= f.label :skills, "Skills" %><br>
+    <%= f.text_field :skills, :value => "e.g. cooking, cleaning, coding, babysitting (separate by commas)" %><br>
+
+    <%= f.label :profile, "Profile" %><br>
+    <%= f.text_field :profile, :value => "Tell us something about yourself!" %><br>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign Up" %>
   </div>

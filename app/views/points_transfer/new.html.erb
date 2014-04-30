@@ -1,3 +1,5 @@
+<h1>You have <%= current_user.points %> points to send!</h1>
+
 <%= form_tag("/points_transfer", method: "POST") do %>
   <%= label_tag(:recipient, "User Name") %>
   <%= text_field_tag(:recipient) %>
