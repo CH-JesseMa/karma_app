@@ -44,6 +44,8 @@ group :development, :test do
   gem 'jasmine'
   gem 'selenium-webdriver'
   gem 'simplecov', '~> 0.7.1', :require => false
+  gem 'coveralls', require: false
+
 end
 
 # Use ActiveModel has_secure_password
