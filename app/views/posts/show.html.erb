@@ -21,6 +21,8 @@
 
     <%= link_to 'Edit', edit_post_path(@post) %>
     <%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete %>
+    <!--ex from docs:  link_to "Profile", controller: "profiles", action: "show", id: @profile -->
+    <%= link_to "Sounds awesome, sign me up!", transactions_path, :method => :post %>
   </div><!-- post listing -->
 </div><!-- post_listing_wrapper  -->
 

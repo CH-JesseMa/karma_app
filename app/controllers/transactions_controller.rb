@@ -20,7 +20,7 @@ class TransactionsController < ApplicationController
 		@transaction = Transaction.new(transaction_params)
 
 		if @transaction.save
-			post = Post.find_by(id: @transaction.post_id)
+			 transaction.post_id)
 			post.is_open = false
 			post.save
 			flash[:notice] = "All right!"
@@ -54,3 +54,13 @@ class TransactionsController < ApplicationController
     end
 
 end
+
+  # create_table "transactions", force: true do |t|
+  #   t.integer  "requester_id"
+  #   t.integer  "servicer_id"
+  #   t.boolean  "requester_complete"
+  #   t.boolean  "servicer_complete"
+  #   t.integer  "point_value"
+  #   t.integer  "post_id"
+  #   t.boolean  "is_complete",        default: false
+  # end
