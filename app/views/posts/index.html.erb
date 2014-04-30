@@ -2,8 +2,10 @@
   <div class="posts">
 
     <h1>Here's What's Happening In Our Community</h1>
-
+    <button id="show_requests">Show Requests</button>
+    <button id="show_offers">offers</button>
     <div id="offers">
+      <h1>Offers</h1>
       <% @offers.each do |post| %>
         <div class="post">
           <%= link_to image_tag post.image_url %>
@@ -19,6 +21,7 @@
     </div>
 
     <div id="requests">
+      <h1>Requests</h1>
       <% @requests.each do |post| %>
         <div class="post">
           <%= link_to image_tag post.image_url %>
