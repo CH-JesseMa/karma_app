@@ -1,50 +1,47 @@
-<h2>Posts</h2>
+<div id="post_listing_wrapper">
+  <div class="post_listing">
+    <h2>Posts</h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+    <p>
+      <strong>Title:</strong>
+      <%= @post.title %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @post.content %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @post.content %>
+    </p>
 
-<p>
-  <%= @post.post_type %>
-</p>
-<p>
-  <img src=<%= @post.image_url %>>
-</p>
+    <p>
+      <%= @post.post_type %>
+    </p>
+    <p>
+      <img src=<%= @post.image_url %>>
+    </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %>
-<%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete %>
+    <%= link_to 'Edit', edit_post_path(@post) %>
+    <%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete %>
+  </div><!-- post listing -->
+</div><!-- post_listing_wrapper  -->
 
-<h2>Responses</h2>
-<% @post.comments.each do |comment| %>
+<div id="response_wrapper">
+  <div class="response">
+  <h2>Responses</h2>
+  <% @post.comments.each do |comment| %>
 
- <p>
-    <strong>Response:</strong>
-    <%= comment.text %>
-  </p>
+   <p>
+      <strong>Response:</strong>
+      <%= comment.text %>
+    </p>
 
-   <%= button_to('Delete Comment', post_comment_path(comment.post, comment),
-               method: :delete) %>
+     <%= button_to('Delete Comment', post_comment_path(comment.post, comment),
+                 method: :delete) %>
 
-<% end %>
+  <% end %>
 
-<%= link_to 'Back to Postings', posts_path %>
+  <%= link_to 'Back to Postings', posts_path %>
 
-<h2>Respond to this Post:</h2>
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
-    <%= f.label :Response %><br>
-    <%= f.text_field :text %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+
 
 
 
