@@ -43,9 +43,8 @@ background-image: -webkit-radial-gradient(center, circle farthest-corner, #32A8E
 background-image: radial-gradient(circle farthest-corner at center, #32A8ED 0%, #8DCEEF 100%);
 }
 
-.top-container {
-  width: 100%;
-  background-color: white;
+.top-content{
+  position: relative;
 }
 
 .top-content li {
@@ -56,6 +55,17 @@ background-image: radial-gradient(circle farthest-corner at center, #32A8ED 0%, 
   display: inline;
   float: right;
   padding-right: 10px;
+}
+
+.background {
+  background-color: grey;
+  opacity: 0.3;
+  height: 1000px;
+  width: 100%;
+  position: absolute;
+  right: 30px;
+  top: 60px;
+  border-radius: 25px;
 }
 
 
