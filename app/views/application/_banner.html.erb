@@ -2,7 +2,7 @@
 <ul class="float-container">
 <ul id="banner">
 <% if logged_in? %>
-		<li class="banner_element">Welcome <%= current_user.user_name %> (<%= current_user.points %> points)</li>
+		<li class="banner_element">Welcome <%= link_to current_user.user_name, user_path(current_user) %> (<%= current_user.points %> points)</li>
     <li class="banner_element"><%= link_to "Add a new post!", new_post_path %></li>
     <li class="banner_element"><%= link_to "Logout", logout_path %></li>
 	<% else %>
