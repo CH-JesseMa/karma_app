@@ -17,10 +17,16 @@ class TransactionsController < ApplicationController
 	end
 
 	def create
-		@transaction = Transaction.new(transaction_params)
+		post = Post.find_by(id: params[:post_id])
+		transaction = Transaction.new(post_id: post.id, point_value: post.karma_value)
+		
+		if post.post_type == "offer"
+			transaction.update(servicer_id: post.user_id, requester_id: current_user.id)
+		elsif post.post_type == "request"
+			transaction.update(requester_id: post.user_id, servicer_id: current_user.id)
+		end
 
-		if @transaction.save
-			 transaction.post_id)
+		if transaction.save
 			post.is_open = false
 			post.save
 			flash[:notice] = "All right!"
