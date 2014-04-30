@@ -18,6 +18,7 @@
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %>
+<%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete %>
 
 <h2>Responses</h2>
 <% @post.comments.each do |comment| %>
