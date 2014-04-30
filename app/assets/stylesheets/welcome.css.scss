@@ -9,21 +9,28 @@
 #karma_app_steps{
   background-color: white;
   width: 60%;
-
+  position: absolute;
+  right: 100px;
 }
 
 #karma_app_steps .steps{
   font-size: 30px;
   font-family: georgia;
+  line-height: 50px;
 }
 
 #sidebar_wrapper{
+  display: block;
+  float: left;
+  top: 100px;
+  width: 130px;
+  background-color: blue;
+  color: white;
   position: relative;
 }
 
 .sidebar{
     background-color: white;
-    position: absolute;
     height: 100%;
 }
 
@@ -36,4 +43,11 @@
   font-size: 30px;
   list-style-type: none;
   padding: 5px;
+  width: 100px;
+}
+
+.sidebar li a {
+  color: white;
+  font-size: 12px;
+  text-align: right;
 }
