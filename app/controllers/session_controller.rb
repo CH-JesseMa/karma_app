@@ -14,6 +14,7 @@ class SessionController < ApplicationController
       flash[:success] = "thanks for logging in!"
       redirect_to("/")
     else
+      #this flash error shows up with quotes around :error and msg.
       flash[:error] = "sorry we couldn't log you in, try again maybe!"
       redirect_to login_path
    end

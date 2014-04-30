@@ -1,5 +1,11 @@
 var postsPage = {
 
+
+  onReady: function() {
+  $(".posts").empty();
+  }
+
 };
 
-$(document).ready(postPage.onReady);
+$(document).ready(postsPage.onReady());
+

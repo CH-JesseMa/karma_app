@@ -18,6 +18,6 @@ poast = Post.create(karma_value: 5, is_open: true, post_type: "offer", title: "H
 Post.create(karma_value: 2, is_open: true, post_type: "request", title: "Are you Sancho?", content: "No, you are not Sancho.", user_id: jon.id)
 
 
-Transaction.create(requester_id: jon.id, servicer_id: bill.id, requester_complete: false, servicer_complete: false, is_completed: false, point_value: poast.karma_value, post_id: poast.id)
+Transaction.create(requester_id: jon.id, servicer_id: bill.id, requester_complete: false, servicer_complete: false, is_complete: false, point_value: poast.karma_value, post_id: poast.id)
 Transaction.create(requester_id: bill.id, servicer_id: jon.id)
 
