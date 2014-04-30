@@ -7,32 +7,34 @@
     <div id="offers">
       <h1>Offers</h1>
       <% @offers.each do |post| %>
-        <div class="post">
-          <%= link_to image_tag post.image_url %>
-          <%= link_to post.title, post_path(post) %>
-          (<%= post.karma_value %> Karma Points)
-          <%= button_to "Sounds awesome, sign me up!", new_transaction_path %>
-          <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
-            <%= link_to 'Edit', edit_post_path(post) %>
-            <%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %>
-          <% end %>
-        </div>
+
+      <div class="post">
+        <%= link_to image_tag post.image_url %>
+        <%= link_to post.title, post_path(post) %>
+        (<%= post.karma_value %> Karma Points)
+        <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %>
+        <% end %>
+      </div>
+
       <% end %>
     </div>
 
     <div id="requests">
       <h1>Requests</h1>
       <% @requests.each do |post| %>
-        <div class="post">
-          <%= link_to image_tag post.image_url %>
-          <%= link_to post.title, post_path(post) %>
-          <%= post.karma_value %>
-          <%= button_to "I want to help!", new_transaction_path %>
-          <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
-            <%= link_to 'Edit', edit_post_path(post) %>
-            <%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %>
-          <% end %>
-        </div>
+
+      <div class="post">
+        <%= link_to image_tag post.image_url %>
+        <%= link_to post.title, post_path(post) %>
+        (<%= post.karma_value %> Karma Points)
+        <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %>
+        <% end %>
+      </div>
+
       <% end %>
     </div>
 
