@@ -3,14 +3,9 @@ var postsPage = {
 
   onReady: function() {
   $(".posts").empty();
-  $("<button>").
   }
 
 };
 
-$(document).ready(postPage.onReady);
+$(document).ready(postsPage.onReady());
 
-
-if post.post_type = "I'm offering services"
-   button1
-else

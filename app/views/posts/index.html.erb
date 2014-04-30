@@ -3,13 +3,14 @@
 
     <h1>Listing Posts</h1>
 
-    <table>
+    <table id="offers_table">
+      <h2>Offers</h2>
       <tr>
         <th>Title</th>
         <th>Description</th>
       </tr>
 
-      <% @posts.each do |post| %>
+      <% @offers.each do |post| %>
         <tr>
           <td><%= link_to post.title, post_path(post) %></td>
           <td><%= post.content %></td>
@@ -22,6 +23,28 @@
         </tr>
       <% end %>
     </table>
+
+    <table id="requests_table">
+      <h2>Requests</h2>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+
+      <% @requests.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, post_path(post) %></td>
+          <td><%= post.content %></td>
+          <td><%= link_to image_tag post.image_url %></td>
+          <td><%= post.post_type %></td>
+              <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %></td>
+            <% end %>
+        </tr>
+      <% end %>
+    </table>
+
   </div><!-- posts -->
 </div><!-- posts wrapper   -->
 
