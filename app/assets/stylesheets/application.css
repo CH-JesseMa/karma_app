@@ -23,7 +23,7 @@ a:hover {
 }
 
 body{
-  overflow: hidden;
+  /*overflow: hidden;*/
  /* IE10 Consumer Preview */
 background-image: -ms-radial-gradient(center, circle farthest-corner, #32A8ED 0%, #8DCEEF 100%);
 
