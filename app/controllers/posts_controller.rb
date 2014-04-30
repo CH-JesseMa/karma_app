@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.where(:is_open => true)
+    binding.pry
     @offers = @posts.where(:post_type => "I'm offering services")
     @requests = @posts.where(:post_type => "I'm requesting services")
   end
