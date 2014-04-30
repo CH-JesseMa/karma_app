@@ -2,17 +2,17 @@
 
 <%= link_to "Dashboard", root_path %>
 
-<div id="members_wrapper">
-  <div class="members">
-    <h1>Our Members</h1>
-
-      <ul>
-        <% @users.each do |user| %>
-      <li><%= link_to(user.name, user_path(user)) %></li>
-      <% end %>
-      </ul>
-  </div><!-- members -->
-</div><!-- members wrapper   -->
-
+<h1>Our Members</h1>
+<div id="members_container">
+  <div id="members_wrapper">
+        <ul>
+          <div class="members">
+          <% @users.each do |user| %>
+            <li><%= link_to(user.name, user_path(user)) %></li>
+          <% end %>
+        </ul>
+    </div><!-- members -->
+  </div><!-- members wrapper   -->
+</div><!-- members container   -->
 
 

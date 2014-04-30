@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.where(:is_open => true)
+    @offers = @posts.where(:post_type => "I'm offering services")
+    @requests = @posts.where(:post_type => "I'm requesting services")
   end
 
   def new
