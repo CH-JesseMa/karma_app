@@ -13,8 +13,6 @@
         <%= link_to post.title, post_path(post) %>
         (<%= post.karma_value %> Karma Points)
         <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
-          <%= link_to 'Edit', edit_post_path(post) %>
-          <%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %>
         <% end %>
       </div>
 
@@ -30,8 +28,6 @@
         <%= link_to post.title, post_path(post) %>
         (<%= post.karma_value %> Karma Points)
         <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
-          <%= link_to 'Edit', edit_post_path(post) %>
-          <%= button_to 'Delete',  { action: "destroy", id: post.id }, method: :delete %>
         <% end %>
       </div>
 
