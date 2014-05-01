@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#banner_wrapper{
+  position: relative;
+}
+
+#banner{
+  position: absolute;
+  right: 40px;
+  top: -105px;
+}
+
+
+
+
 #karma_app_wrapper{
   position: relative;
 }
@@ -29,12 +42,17 @@
   width: 30px;
   top: 50px;
   left: 100px;
-  x-index: 100;
 }
 
 #title{
   font-family: georgia;
   font-size: 40px;
+}
+
+
+.sidebar{
+  position: absolute;
+  right: -50px;
 }
 
 .sidebar li {
@@ -43,13 +61,11 @@
   padding: 5px;
   width: 100px;
   display: block;
-  position: left;
   padding: 10px;
+  position: relative;
+  z-index: 9999;
 }
 
-/*.banner{
-  position: absolute;
-}*/
 
 .banner_list_item:hover {
   background-color: white;
@@ -59,6 +75,8 @@
   color: black;
   font-size: 25px;
   text-align: left;
+  position: relative;
+  z-index: 9999;
 }
 
 a{

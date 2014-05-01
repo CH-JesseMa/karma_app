@@ -18,32 +18,12 @@ a:link{
   text-decoration:none;
 }
 
-#wrapper{
-  z-index: 101;
-}
+
 
 body{
   background-color: #2b4a52;
   opacity: 0.8;
-  /*overflow: hidden;*/
- /* IE10 Consumer Preview */
-/*background-image: -ms-radial-gradient(center, circle farthest-corner, #2b4a52 90%, #363c40 100%);
-
-/* Mozilla Firefox */
-/*background-image: -moz-radial-gradient(center, circle farthest-corner, #2b4a52 90%, #363c40 100%);*/
-
-/* Opera */
-/*background-image: -o-radial-gradient(center, circle farthest-corner, #2b4a52 90%, #363c40 100%);*/
-
-/* Webkit (Safari/Chrome 10) */
-/*background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #2b4a52), color-stop(1, #363c40));*/
-
-/* Webkit (Chrome 11+) */
-/*background-image: -webkit-radial-gradient(center, circle farthest-corner, #2b4a52 90%, #363c40 100%);*/
-
-/* W3C Markup, IE10 Release Preview */
-/*background-image: radial-gradient(circle farthest-corner at center, #2b4a52 90%, #363c40 100%);*/*/
-}
+ }
 
 .logo img{
   height: 100px;
@@ -53,6 +33,7 @@ body{
 
 .top-content{
   position: relative;
+  height: 50px;
 }
 
 .top-content li {

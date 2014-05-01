@@ -1,4 +1,4 @@
-<ul class="float-container">
+<div id="banner_wrapper">
 <ul id="banner">
 <% if logged_in? %>
 		<li class="banner_element">Welcome <%= link_to current_user.user_name, user_path(current_user) %> (<%= current_user.points %> points)</li>
@@ -9,3 +9,4 @@
 		<li class="banner_element"><%= link_to "Sign In |", login_path %></li>
 	<% end %>
 </ul>
+</div>
