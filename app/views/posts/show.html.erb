@@ -41,23 +41,34 @@
 
 <h2>Add a comment:</h2>
  <%= form_for([@post, @post.comments.build]) do |f| %>
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
-  </p>
+<h1><%= @post.title %> - <%= @post.post_type %> - (<%= @post.karma_value %> Points)</h1>
+<h2><%= @user.user_name %> - <%= @user.location %></h2>
+<%= image_tag @post.image_url %>
+
+<p><%= @post.content %></p>
+
+<% if current_user && (current_user.id == @user.id) %>
+  <%= link_to 'Edit', edit_post_path(@post) %>
+  <%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete %>
+<% end %>
+
+<h2>Responses</h2>
+<% @post.comments.each do |comment| %>
+
    <p>
-    <%= f.submit %>
+      <strong>Comment:</strong>
+      <%= comment.text %>
+      <strong>Comment Author:</strong>
+      <%= User.find_by(id: comment.user_id).user_name %>
   </p>
+
+  <% if current_user && (comment.user_id == @user.id) %>
+    <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
+    <%= button_to('Delete Comment', post_comment_path(@post, comment), method: :delete) %>
   <% end %>
-
-  <!-- # button_to 'Delete Comment', { action: "destroy", id: comment.id} method: :delete  -->
-
-  </div><!-- response -->
-</div><!-- response_wrapper -->
+<% end %>
 
 
 
 
-
-
-
+<%= link_to 'Back to Postings', posts_path %>
