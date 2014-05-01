@@ -22,9 +22,6 @@ class ApplicationController < ActionController::Base
   def require_admin
     if logged_in? && current_user.admin
       return true
-    # else
-    #   flash[:error] = "Dude. Only administrators can do that. Are YOU an admin? Nuh-uh."
-    #   redirect_to(root_path)
     end
   end
 end

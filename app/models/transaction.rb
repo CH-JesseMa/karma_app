@@ -37,7 +37,22 @@ class Transaction < ActiveRecord::Base
 	def check_completion_status
 		if self.requester_complete && self.servicer_complete
 			self.update(is_complete: true)
+
+			requester = User.find_by(id: self.requester_id)
+			servicer = User.find_by(id: self.servicer_id)
+
+			requester.transfer_points(servicer, self.point_value)
 		end
 	end
 		
+	def confirm_completion(user_id)
+
+		if self.requester_id == user_id
+			self.update(requester_complete: true)
+		elsif self.servicer_id == user_id
+			self.update(servicer_complete: true)
+		end
+			
+		self.check_completion_status
+	end
 end
