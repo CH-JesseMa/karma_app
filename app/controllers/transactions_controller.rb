@@ -14,7 +14,7 @@ class TransactionsController < ApplicationController
 		post = Post.find_by(id: params[:post_id])
 		transaction = Transaction.new(post_id: post.id, point_value: post.karma_value)
 
-		transaction.populate_transaction_table(post)
+		transaction.populate_transaction_table(post, current_user)
 
 		if transaction.save
 			flash[:notice] = "All right!"

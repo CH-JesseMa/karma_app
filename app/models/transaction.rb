@@ -22,12 +22,12 @@ class Transaction < ActiveRecord::Base
 	has_one :post
 	has_many :users
 	
-	def populate_transaction_table(post)
+	def populate_transaction_table(post, user)
 
 		if post.post_type == "offer"
-			self.update(servicer_id: post.user_id, requester_id: current_user.id)
+			self.update(servicer_id: post.user_id, requester_id: user.id)
 		elsif post.post_type == "request"
-			self.update(requester_id: post.user_id, servicer_id: current_user.id)
+			self.update(requester_id: post.user_id, servicer_id: user.id)
 		end
 
 		post.is_open = false
