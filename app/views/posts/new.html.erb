@@ -2,51 +2,49 @@
   <div class="add_posting">
     <h2>Add Your Posting</h2>
 
-    <%= form_for :post, url: posts_path do |f| %>
+      <%= form_for :post, url: posts_path do |f| %>
 
-      <% if @post.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@post.errors.count, "error") %> kept
-          this posting from being saved:</h2>
-        <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+        <% if @post.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@post.errors.count, "error") %> kept
+              this posting from being saved:</h2>
+            <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
         <% end %>
-        </ul>
-      </div>
+
+        <p>
+          <%= f.label :title %><br>
+          <%= f.text_field :title %>
+        </p>
+
+        <p>
+          <%= f.label :content %><br>
+          <%= f.text_area :content %>
+        </p>
+
+        <p>
+          <%= f.label :image_url, "Add an image..." %><br>
+          <%= f.text_field :image_url %>
+        </p>
+
+        <p>
+          <%= f.label(:karma_value, "Amount of Points") %>
+          <%= f.number_field(:karma_value) %>
+        </p>
+
+          <%= f.radio_button(:post_type, "offer") %>
+          <%= f.label(:post_type, "I'm offering services") %>
+          <%= f.radio_button(:post_type, "request") %>
+          <%= f.label(:post_type, "I'm requesting services") %>
+
+        <p>
+          <%= f.submit %>
+        </p>
       <% end %>
-
-      <p>
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
-      </p>
-
-      <p>
-        <%= f.label :content %><br>
-        <%= f.text_area :content %>
-      </p>
-      <p>
-        <%= f.label :image_url, "Add an image..." %><br>
-        <%= f.text_field :image_url %>
-      </p>
-      <p>
-      <%= f.label(:karma_value, "Amount of Points") %>
-      <%= f.number_field(:karma_value) %>
-      </p>
-
-
-
-    <%= f.radio_button(:post_type, "offer") %>
-    <%= f.label(:post_type, "I'm offering services") %>
-    <%= f.radio_button(:post_type, "request") %>
-    <%= f.label(:post_type, "I'm requesting services") %>
-
-      <p>
-        <%= f.submit %>
-      </p>
-    <% end %>
-
-    <%= link_to 'Back', posts_path %>
 
   </div><!-- add posting -->
 </div><!-- add posting wrapper -->
