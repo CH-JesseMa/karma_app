@@ -15,12 +15,12 @@ describe "posts index" do
       # and they click on requests
       click_button('Show Requests')
       request_div = find("#requests")
-      offers_div = find("#offers")
       # then it shows all requests
       expect(request_div).to be_visible
       # (and they shouldnt see offers!)
-      expect(offers_div).not_to be_visible
+      expect(page).not_to have_css("#offers")
     end
+
     it "should display only the offers on the page" do
       user = User.create(user_name: "Spaniard", email: "gladiator@gmail.com", password: "maximus", password_confirmation: "maximus")
       visit '/login'
@@ -29,13 +29,12 @@ describe "posts index" do
       click_button 'Login'
       click_on "What's Going On?"
       # and they click on requests
-      click_button('offers')
-      request_div = find("#requests")
+      click_button('Offers')
       offers_div = find("#offers")
       # then it shows all requests
       expect(offers_div).to be_visible
       # (and they shouldnt see offers!)
-      expect(request_div).not_to be_visible
+      expect(page).not_to have_css("requests")
     end
 
   end
