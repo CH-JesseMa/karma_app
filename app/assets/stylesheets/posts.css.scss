@@ -3,14 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#post_wrapper .posts{
-  display: inline;
-  background-color: white;
-  position: relative;
-  margin: 0 auto;
-}
-
-
 #add_posting_wrapper{
   position: relative;
 }
@@ -30,22 +22,9 @@
 
 .post_listing{
   position: absolute;
-  right: 500px;
-  top: 50px;
-  width: 100%;
-  z-index: -100;
+  right: 350px;
 }
 
-/*#response_wrapper{
-  position: relative;
-}
-
-.response{
-  position: absolute;
-  top: 325px;
-  left: 470px;
-
-}*/
 
 .posts{
   position: relative;
@@ -90,8 +69,5 @@
   border: 10px solid white;
 }
 
-.response{
-  position: relative;
-  width: 100%;
-}
+
 

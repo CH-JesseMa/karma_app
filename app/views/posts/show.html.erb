@@ -16,10 +16,8 @@
         <%= @post.post_type %>
       </p>
       <div class="user_pic">
-      <p>
         <img src=<%= @post.image_url %>>
-      </p>
-    </div><!-- user pic -->
+      </div><!-- user pic -- >
       <%= link_to 'Edit', edit_post_path(@post) %>
       <%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete %>
       <!--ex from docs:  link_to "Profile", controller: "profiles", action: "show", id: @profile -->
@@ -41,7 +39,7 @@
    <%= form_for([@post, @post.comments.build]) do |f| %>
   <h1><%= @post.title %> - <%= @post.post_type %> - (<%= @post.karma_value %> Points)</h1>
   <h2><%= @user.user_name %> - <%= @user.location %></h2>
-  <%= image_tag @post.image_url %>
+
 
   <p><%= @post.content %></p>
   <% end %>
@@ -76,4 +74,4 @@
       <%= link_to 'Back to Postings', posts_path %>
 
   </div><!-- post_listing -->
-</div><!-- post_listing_wrapper -->
+</div><!-- post_listing_wrapper  -->
