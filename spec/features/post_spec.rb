@@ -11,9 +11,9 @@ describe "posts index" do
       fill_in 'Email', :with => 'gladiator@gmail.com'
       fill_in 'Password', :with => 'maximus'
       click_button 'Login'
-      click_on "What's Going On?"
+      click_on "Services"
       # and they click on requests
-      click_button('Show Requests')
+      click_button('Looking for Services')
       request_div = find("#requests")
       # then it shows all requests
       expect(request_div).to be_visible
@@ -27,9 +27,9 @@ describe "posts index" do
       fill_in 'Email', :with => 'gladiator@gmail.com'
       fill_in 'Password', :with => 'maximus'
       click_button 'Login'
-      click_on "What's Going On?"
+      click_on "Services"
       # and they click on requests
-      click_button('Offers')
+      click_button('Services Offered')
       offers_div = find("#offers")
       # then it shows all requests
       expect(offers_div).to be_visible
