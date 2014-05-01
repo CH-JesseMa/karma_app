@@ -1,10 +1,9 @@
-<div id="post_listing_wrapper">
   <div class="post_listing">
 
     <h1><%= @post.title %> (<%= @post.post_type %>)</h1>
 
     <div class="user_pic">
-      <img src=<%= @post.image_url %>>
+      <img src="<%= @post.image_url %>">
     </div><!-- user pic -- >
 
     <p><%= @post.content %></p>
@@ -20,7 +19,6 @@
       <%= link_to 'Edit', edit_post_path(@post) %>
       <%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete %>
     <% end %>
-
     <h2>Responses</h2>
       <% @post.comments.each do |comment| %>
         <p>
@@ -34,7 +32,6 @@
           <%= button_to('Delete Comment', post_comment_path(@post, comment), method: :delete) %>
         <% end %>
       <% end %>
-
   <h2>Add a comment:</h2>
 
     <%= form_for([@post, @post.comments.build]) do |f| %>
@@ -42,6 +39,4 @@
       <h2><%= @user.user_name %> - <%= @user.location %></h2>
       <p><%= @post.content %></p>
     <% end %>
-
-  </div><!-- post_listing -->
-</div><!-- post_listing_wrapper  -->
+    </div>
