@@ -12,7 +12,13 @@
   top: -105px;
 }
 
+.banner_element a{
+  color: white;
+}
 
+.banner_element a:hover{
+  background-color: pink;
+}
 
 
 #karma_app_wrapper{
@@ -20,18 +26,17 @@
 }
 
 #karma_app_steps{
-  width: 60%;
+  width: 600px;
   position: absolute;
   right: 100px;
   border-radius: 15px;
+  text-align: center;
 }
 
 #karma_app_steps .steps{
   font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 50px;
-  text-align: left;
-  margin-left: 10px;
   list-style: none outside none;
 }
 
@@ -79,9 +84,9 @@
   z-index: 9999;
 }
 
-a{
+/*a{
   color: white;
-}
+}*/
 
 #karma_app_wrapper{
   width: 100%;
