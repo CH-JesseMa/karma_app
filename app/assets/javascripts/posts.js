@@ -8,12 +8,12 @@ var postsPage = {
     $("#offers").hide();
     $("#show_requests").on("click", function() {
       $("#offers").hide();
-      $("#requests").show();
+      $("#requests").fadeIn(1000);
     });
 
     $("#show_offers").on("click", function() {
       $("#requests").hide();
-      $("#offers").show();
+      $("#offers").fadeIn(1000);
     });
   }
 

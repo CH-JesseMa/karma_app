@@ -18,8 +18,8 @@ a:link{
   text-decoration:none;
 }
 
-a:hover {
-  background-color: white;
+#wrapper{
+  x-index: 101;
 }
 
 body{
@@ -68,6 +68,22 @@ body{
   right: 30px;
   top: 60px;
   border-radius: 25px;
+  z-index: -1;
+}
+
+button{
+  background: white;
+  font-size: 16px;
+  border: 10px solid #d1cac9;
+  margin: 0px;
+  cursor: pointer;
+}
+
+input{
+  background: white;
+  border: 1px solid #d1cac9;
+  margin: 0px;
+  cursor: pointer;
 }
 
 

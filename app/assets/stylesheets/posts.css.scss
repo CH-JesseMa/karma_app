@@ -46,27 +46,51 @@
 
 }
 
+.posts{
+  position: relative;
+  color: white;
+  text-align: center;
+  top: 80px;
+}
+
+#posts_header{
+  padding-left: 160px;
+}
+
 #show_offers{
-  width: 300px;
-  height: 200px;
-  background: black;
+  width: 400px;
+  height: 100px;
+  background: white;
   font-size: 26px;
-  color: #fff;
-  border: 10px solid white;
+  border: 10px solid #d1cac9;
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 #show_requests{
-  width: 300px;
-  height: 200px;
-  background: black;
+  width: 400px;
+  height: 100px;
+  background: white;
   font-size: 26px;
-  color: #fff;
-  border: 10px solid white;
+  border: 10px solid #d1cac9;
   margin: 0px;
-  padding: 0px;
-
+  padding: 10px;
+  cursor: pointer;
 }
 
+#show_requests:hover{
+  background-color: #d1cac9;
+  border: 10px solid white;
+}
+
+#show_offers:hover{
+  background-color: #d1cac9;
+  border: 10px solid white;
+}
+
+.response{
+  position: relative;
+  width: 100%;
+}
 

@@ -16,25 +16,9 @@
       </div> <!-- top-content -->
 
 
-
-<!--      <%# flash.each do |name, msg| -%>
-      <%#= content_tag :div, msg, class: name %>
-    <%# end -%>
-
-    <%# flash.each do |key, msg| %>
-  <%#= content_tag :div, msg, :id => key %>
-<%# end %>
-
-<%#= unless flash[:notice].nil? %>
-<div id="notice"><%#= flash[:notice] %></div>
-<%# end %>
-
-<%# if flash[:error] %>
-    <div class="error"><%#= flash[:error] %></div>
-<%# end %> -->
-
-
-<%= yield %>
+<div id="yield_wrapper">
+  <%= yield %>
+</div>
 
 
     </div> <!-- wrapper -->
