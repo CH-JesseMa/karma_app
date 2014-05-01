@@ -9,7 +9,6 @@
       <% @offers.each do |post| %>
 
       <div class="post">
-        <%= link_to image_tag post.image_url %>
         <%= link_to post.title, post_path(post) %>
         (<%= post.karma_value %> Karma Points)
         <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
@@ -24,7 +23,6 @@
       <% @requests.each do |post| %>
 
       <div class="post">
-        <%= link_to image_tag post.image_url %>
         <%= link_to post.title, post_path(post) %>
         (<%= post.karma_value %> Karma Points)
         <% if current_user && (current_user.is_admin || current_user.id == post.user_id) %>
