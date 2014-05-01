@@ -18,11 +18,13 @@ a:link{
   text-decoration:none;
 }
 
-
-
 body{
   background-color: #2b4a52;
   opacity: 0.8;
+}
+
+.background #sidebar_wrapper .sidebar ul li a{
+  font-size: 16px;
 }
 
 .logo img{
