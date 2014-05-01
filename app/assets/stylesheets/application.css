@@ -89,10 +89,12 @@ input{
 .user_pic img{
   width: 150px;
   height: 150px;
+}
 
-#title {
+#title{
   position: absolute;
   top: -30px;
+  width: 10px;
 }
 
 .user_pic img{
