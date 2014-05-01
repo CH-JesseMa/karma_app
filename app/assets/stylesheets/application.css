@@ -45,6 +45,12 @@ body{
 /*background-image: radial-gradient(circle farthest-corner at center, #2b4a52 90%, #363c40 100%);*/*/
 }
 
+.logo img{
+  height: 100px;
+  width: 100px;
+  display: inline;
+}
+
 .top-content{
   position: relative;
 }
