@@ -32,15 +32,15 @@
       - Completed!
     <% else %>
       - Open
-    <% end %></h3>
-
-    <% if (current_user.id == transaction.requester_id && !transaction.requester_complete) ||
+     <% if (current_user.id == transaction.requester_id && !transaction.requester_complete) ||
         (current_user.id == transaction.servicer_id && !transaction.servicer_complete) %>
-      <button class="complete">Mark As Completed</button>
-    <% else %>
-      <strong>Confirmation Pending</strong>
+          <button class="complete">Mark As Completed</button>
+     <% else %>
+        <strong>Confirmation Pending</strong>
+      <% end %>
     <% end %>
-  <% end %>
+  <% end %></h3>
+
 </div>
 
 <% else %>
