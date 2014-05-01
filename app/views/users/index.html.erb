@@ -11,22 +11,6 @@
                 <th>Skills</th>
               </tr>
 
-
-<<<<<<< HEAD
-                <% @users.each do |user| %>
-                  <tr>
-                      <td> <img src=" <%= user.image_url %>" width="75px" alt="<%= user.name %>"></td>
-                      <td><%= link_to user.user_name, user_path(user) %></td>
-                      <td><%= user.name %></td>
-                      <td><%= user.points %> pts.</td>
-                      <td><%= user.location %></td>
-                      <td><%= user.skills %></td>
-                  </tr>
-                <% end %>
-            </table>
-
-
-=======
               <% @users.each do |user| %>
                 <tr>
                     <td><img src=" <%= user.image_url %>" width="85px" alt="<%= user.name %>"></td>
@@ -39,6 +23,5 @@
               <% end %>
 
             </table>
->>>>>>> 9dd8c0ca4d597e0ea5c015d52175c153e541aad0
     </div><!-- members -->
   </div><!-- members wrapper   -->
