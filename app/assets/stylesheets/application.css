@@ -86,5 +86,10 @@ input{
   cursor: pointer;
 }
 
+#title{
+  position: absolute;
+  top: -30px;
+}
+
 
 
