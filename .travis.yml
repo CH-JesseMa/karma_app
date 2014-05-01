@@ -9,5 +9,6 @@ env:
   - PG_USERNAME='postgres'
 script:
   - "bundle exec rake db:create"
-  - "bundle exec rake db:migrate RAILS_ENV=test"
+  - "bundle exec rake db:schema:load RAILS_ENV=test"
+  # - "bundle exec rake db:migrate RAILS_ENV=test"
   - "bundle exec rake spec"
