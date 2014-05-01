@@ -1,14 +1,19 @@
-<ul>
-	<% if logged_in? %>
-		<li> <%= link_to "Dashboard", root_path %> </li>
-		<li> <%= link_to "Send Karma", new_points_transfer_path %> </li>
-	<% else %>
-		<li> <%= link_to "Get Started", root_path %> </li>
-	<% end %>
+<div id="sidebar_wrapper">
+	<div class="sidebar">
+	<ul>
+		<% if logged_in? %>
+			<li class="banner_list_item"> <%= link_to "Dashboard", root_path %> </li>
+			<li class="banner_list_item"> <%= link_to "Send Karma", new_points_transfer_path %></li>
+		<% else %>
+			<li class="banner_list_item"> <%= link_to "Get Started", root_path %> </li>
+		<% end %>
+		<li class="banner_list_item"><%= link_to "What's Going On?", posts_path %> </li>
+		<li class="banner_list_item"><%= link_to "Our Members", users_path %></li>
+		<li class="banner_list_item"><a href="/faq">FAQ</a></li>
+		<li class="banner_list_item"><a href="/contact">Contact Us</a></li>
+		<li class="banner_list_item"><a href="/legal">Legal</a></li>
+	</ul>
+	</div><!-- sidebar -->
+</div><!-- sidebar_wrapper -->
 
-	<li><%= link_to "What's Going On?", posts_path %> </li>
-	<li><%= link_to "Our Members", users_path %></li>
-	<li><a href="/faq">FAQ</a></li>
-	<li><a href="/contact">Contact Us</a></li>
-	<li><a href="/legal">Legal</a></li>
-</ul>
+

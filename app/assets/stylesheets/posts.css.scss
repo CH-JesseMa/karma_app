@@ -1,3 +1,97 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#post_wrapper .posts{
+  display: inline;
+  background-color: white;
+  position: relative;
+  margin: 0 auto;
+}
+
+
+#add_posting_wrapper{
+  position: relative;
+}
+
+.add_posting{
+  position: absolute;
+  right: 400px;
+  top: 100px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+}
+
+#post_listing_wrapper{
+  position: relative;
+}
+
+.post_listing{
+  position: absolute;
+  right: 500px;
+  top: 50px;
+  width: 100%;
+  z-index: -100;
+}
+
+#response_wrapper{
+  position: relative;
+}
+
+.response{
+  position: absolute;
+  top: 325px;
+  left: 470px;
+
+}
+
+.posts{
+  position: relative;
+  color: white;
+  text-align: center;
+  top: 80px;
+}
+
+#posts_header{
+  padding-left: 160px;
+}
+
+#show_offers{
+  width: 400px;
+  height: 100px;
+  background: white;
+  font-size: 26px;
+  border: 10px solid #d1cac9;
+  margin: 0px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#show_requests{
+  width: 400px;
+  height: 100px;
+  background: white;
+  font-size: 26px;
+  border: 10px solid #d1cac9;
+  margin: 0px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#show_requests:hover{
+  background-color: #d1cac9;
+  border: 10px solid white;
+}
+
+#show_offers:hover{
+  background-color: #d1cac9;
+  border: 10px solid white;
+}
+
+.response{
+  position: relative;
+  width: 100%;
+}
+

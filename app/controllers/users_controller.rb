@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find_by(id: params[:id])
+  end
+
   # GET /users/1/edit
   def edit
   end

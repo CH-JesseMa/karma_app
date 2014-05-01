@@ -1,10 +1,26 @@
-<h1>our members</h1>
-
-<%= link_to "Dashboard", root_path %>
-
-
-<ul>
-<% @users.each do |user| %>
-  <li><%= link_to(user.name, user_path(user)) %></li>
-<% end %>
-</ul>
+<h1>Our Members</h1>
+<div id="members_container">
+  <div id="members_wrapper">
+      <div class="members">
+          <% @users.each do |user| %>
+          	<div class="user">
+          		<div class="user-header">
+	          		<%= link_to image_tag user.image_url %>
+	          		<%= link_to user.user_name, user_path(user) %>
+	          		(<%= user.points %> pts.)
+	          		- <%= user.location %>
+	          	</div>
+	          	<div class="user-body">
+		          	<ul>
+		          		<li><%= user.name %></li>
+		          		<li><%= user.skills %></li>
+		          		<% user.posts.each do |post| %>
+		          			<li><%= link_to post.title, post_path(post) %>, (<%= post.karma_value %> Karma Points)</li>
+		          		<% end %>
+		          	</ul>
+		        </div>
+	         </div>
+          <% end %>
+    </div><!-- members -->
+  </div><!-- members wrapper   -->
+</div><!-- members container   -->

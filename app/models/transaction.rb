@@ -13,9 +13,13 @@
 #  point_value        :integer
 #  created_at         :datetime
 #  updated_at         :datetime
+#  post_id            :integer
+#  is_complete        :boolean          default(FALSE)
 #
 
 class Transaction < ActiveRecord::Base
+
 	has_one :post
 	has_many :users
+	
 end

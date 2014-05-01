@@ -1,33 +1,52 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="sign_up_wrapper">
+  <h1>Sign Up For Karma App</h1>
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
+<div class="sign_up">
   <div class="field">
-    <%= f.label :user_name, "User Name" %><br>
-    <%= f.text_field :user_name %>
+    <%= f.label :user_name, "User Name*" %><br>
+    <%= f.text_field :user_name, :value =>  "e.g. handyman123" %><br>
+
+    <%= f.label :name, "Name*" %><br>
+    <%= f.text_field :name, :value => "e.g. John Smith" %><br>
+
+    <%= f.label :email, "Email*" %><br>
+    <%= f.text_field :email, :value => "e.g. handyman123@gmail.com" %><br>
+
+    <%= f.label :password, "Password*" %><br>
+    <%= f.password_field :password %><br>
+
+    <%= f.label :password_confirmation, "Confirm Password*" %><br>
+    <%= f.password_field :password_confirmation %><br>
   </div>
   <div class="field">
-    <%= f.label :email, "Email" %><br>
-    <%= f.text_field :email %>
+    <%= f.label :location, "Location*" %><br>
+    <%= f.text_field :location, :value => "e.g. New York, NY" %><br>
+
+    <%= f.label :image_url, "Profile Image URL" %><br>
+    <%= f.text_field :image_url, :value => "e.g. http://africasacountry.com/wp-content/uploads/2014/02/William-Onyeabor.jpg" %><br>
+
+    <%= f.label :skills, "Skills" %><br>
+    <%= f.text_field :skills, :value => "e.g. cooking, cleaning, coding, babysitting (separate by commas)" %><br>
+
+    <%= f.label :profile, "Profile" %><br>
+    <%= f.text_field :profile, :value => "Tell us something about yourself!" %><br>
   </div>
-  <div class="field">
-    <%= f.label :password, "Password" %><br>
-    <%= f.password_field :password %>
-  </div>
-   <div class="field">
-    <%= f.label :password_confirmation, "Confirm Password" %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
+
   <div class="actions">
     <%= f.submit "Sign Up" %>
   </div>
 <% end %>
+  </div><!-- sign up -->
+</div><!-- sign up wrapper -->

@@ -2,37 +2,28 @@
 <html>
 <head>
   <title>KarmaApp</title>
-  <!-- for some reason the line below is breaking rails? -->
-<!--   <%# stylesheet_link_tag    'application', media: 'all' => true %> -->
-  <%= javascript_include_tag 'application' => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-	<%= render 'banner' %>
-
-<!--      <%# flash.each do |name, msg| -%>
-      <%#= content_tag :div, msg, class: name %>
-    <%# end -%>
-
-    <%# flash.each do |key, msg| %>
-  <%#= content_tag :div, msg, :id => key %>
-<%# end %>
-
-<%#= unless flash[:notice].nil? %>
-<div id="notice"><%#= flash[:notice] %></div>
-<%# end %>
-
-<%# if flash[:error] %>
-    <div class="error"><%#= flash[:error] %></div>
-<%# end %> -->
+  <div id="wrapper">
+        <div class="top-content">
+  <h1 id="title"><a href="/">Karma</a></h1>
+          <%= render 'banner' %>
+            <div class="background">
+              <%= render 'sidebar' %>
+        </div><!-- background -->
+      </div> <!-- top-content -->
 
 
-<%= yield %>
+<div id="yield_wrapper">
+  <%= yield %>
+</div>
 
-	<%= render 'sidebar' %>
-	
-</body>
+
+    </div> <!-- wrapper -->
+  </body>
 </html>
 
 

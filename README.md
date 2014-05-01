@@ -14,6 +14,7 @@ https://www.pivotaltracker.com/s/projects/1067174#
 
 [![Build Status](https://travis-ci.org/CH-JesseMa/karma_app.svg?branch=develop)](https://travis-ci.org/CH-JesseMa/karma_app)
 
+[![Coverage Status](https://coveralls.io/repos/CH-JesseMa/karma_app/badge.png)](https://coveralls.io/r/CH-JesseMa/karma_app)
 ========================
 
 ## commands for rails 3.2.12:

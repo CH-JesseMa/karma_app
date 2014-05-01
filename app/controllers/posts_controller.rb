@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.where(:is_open => true)
+    @offers = @posts.where(:post_type => "offer")
+    @requests = @posts.where(:post_type => "request")
   end
 
   def new
@@ -8,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       redirect_to @post
@@ -19,6 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = User.find_by(id: @post.user_id)
   end
 
   def edit
@@ -44,9 +47,18 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :image_url, :type)
+    params.require(:post).permit(
+                   :title,
+                   :content,
+                   :image_url,
+                   :user_id,
+                   :karma_value,
+                   :is_open,
+                   :karma_value,
+                   :post_type,
+                   :transaction_id
+                  )
   end
-
 end
 
 
