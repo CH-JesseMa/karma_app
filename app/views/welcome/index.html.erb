@@ -14,7 +14,7 @@
 
     <h2>My open posts</h2>
       <% @open_posts.each do |post| %>
-        <p><%= link_to post.title, post_path(post) %> (<%= post.karma_value %> pts) <button>Close Post</button></p>
+        <p><%= link_to post.title, post_path(post) %> (<%= post.karma_value %> pts) <button class="close">Close Post</button></p>
       <% end %>
   </div>
 
