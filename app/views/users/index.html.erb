@@ -12,18 +12,17 @@
                 </tr>
 
                 <% @users.each do |user| %>
-                <tr>
-                  <div class="user_pic">
-                    <td><%= link_to image_tag user.image_url %></td>
-                  </div>
-                    <td><%= link_to user.user_name, user_path(user) %></td>
-                    <td><%= user.name %></td>
-                    <td><%= user.points %> pts.</td>
-                    <td><%= user.location %></td>
-                    <td><%= user.skills %></td>
-                </tr>
-              </table>
+                  <tr>
+                      <td> <img src=" <%= user.image_url %>" width="75px" alt="<%= user.name %>"></td>
+                      <td><%= link_to user.user_name, user_path(user) %></td>
+                      <td><%= user.name %></td>
+                      <td><%= user.points %> pts.</td>
+                      <td><%= user.location %></td>
+                      <td><%= user.skills %></td>
+                  </tr>
+                <% end %>
+            </table>
 
-          <% end %>
+
     </div><!-- members -->
   </div><!-- members wrapper   -->
