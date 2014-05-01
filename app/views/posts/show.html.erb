@@ -15,9 +15,12 @@
     <p>
       <%= @post.post_type %>
     </p>
-    <p>
-      <img src=<%= @post.image_url %>>
-    </p>
+
+      <div class="user_pic">
+
+          <img src=<%= @post.image_url %>>
+
+      </div><!-- user_pic -->
 
     <%= link_to 'Edit', edit_post_path(@post) %>
     <%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete %>
@@ -26,34 +29,28 @@
       <%= hidden_field_tag(:post_id, params[:id]) %>
       <%= submit_tag("Sounds awesome, sign me up!") %>
     <% end %>
-  </div><!-- post listing -->
-</div><!-- post_listing_wrapper  -->
 
-<div id="response_wrapper">
-  <div class="response">
   <h2>Responses</h2>
   <% @post.comments.each do |comment| %>
     <p>
-      <strong>Comment:</strong>
+      <strong>Response:</strong>
       <%= comment.text %>
     </p>
 <% end %>
 
-<h2>Add a comment:</h2>
+<h2>Add a response:</h2>
  <%= form_for([@post, @post.comments.build]) do |f| %>
   <p>
     <%= f.label :text %><br>
     <%= f.text_field :text %>
   </p>
    <p>
-    <%= f.submit %>
+    <%= f.submit "Respond" %>
   </p>
   <% end %>
 
-  <!-- # button_to 'Delete Comment', { action: "destroy", id: comment.id} method: :delete  -->
-
-  </div><!-- response -->
-</div><!-- response_wrapper -->
+  </div><!-- post_listing -->
+</div><!-- post_listing_wrapper -->
 
 
 
