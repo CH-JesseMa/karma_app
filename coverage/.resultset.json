@@ -269,6 +269,13 @@
         0,
         0,
         null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/jessema/dev/wdi/karma_app/app/models/user.rb": [
@@ -388,7 +395,6 @@
         1,
         null,
         6,
-        null,
         4,
         4,
         4,
@@ -400,6 +406,6 @@
         null
       ]
     },
-    "timestamp": 1398972432
+    "timestamp": 1398972651
   }
 }
