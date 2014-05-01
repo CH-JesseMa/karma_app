@@ -14,7 +14,7 @@
               <% @users.each do |user| %>
                 <tr>
                     <td><img src=" <%= user.image_url %>" width="85px" alt="<%= user.name %>"></td>
-                    <td><%= link_to user.user_name, user_path(user) %></td>
+                    <td><a href="<%= user_path(user) %>"><%= user.user_name %></a></td>
                     <td><%= user.name %></td>
                     <td><%= user.points %> pts.</td>
                     <td><%= user.location %></td>
