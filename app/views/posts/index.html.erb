@@ -1,34 +1,32 @@
-<div id="posts_wrapper">
-  <div class="posts">
+<div class="posts">
 
-    <h1 id="posts_header">Here's What's Happening In Our Community</h1>
-    <button id="show_requests">Show Requests</button>
-    <button id="show_offers">Offers</button>
-    <div id="offers">
-      <h1>Offers</h1>
+  <h1 id="posts_header">Here's What's Happening In Our Community</h1>
+  <button id="show_requests">Looking for Services</button>
+  <button id="show_offers">Services Offered</button>
+  <div id="offers">
+    <h1>Offers</h1>
 
-      <% @offers.each do |post| %>
-        <div class="post">
-          <%= link_to post.title, post_path(post) %>
-          (<%= post.karma_value %> Karma Points)
-        </div>
-      <% end %>
+    <% @offers.each do |post| %>
+      <div class="post">
+        <%= link_to post.title, post_path(post) %>
+        (<%= post.karma_value %> Karma Points)
+      </div>
+    <% end %>
 
-    </div>
+  </div>
 
-    <div id="requests">
-      <h1>Requests</h1>
+  <div id="requests">
+    <h1>Requests</h1>
 
-      <% @requests.each do |post| %>
-        <div class="post">
-          <%= link_to post.title, post_path(post) %>
-          (<%= post.karma_value %> Karma Points)
-        </div>
-      <% end %>
+    <% @requests.each do |post| %>
+      <div class="post">
+        <%= link_to post.title, post_path(post) %>
+        (<%= post.karma_value %> Karma Points)
+      </div>
+    <% end %>
 
-    </div>
-  </div><!-- posts -->
-</div><!-- posts wrapper   -->
+  </div>
+</div><!-- posts -->
 
 
 
