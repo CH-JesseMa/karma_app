@@ -18,9 +18,7 @@ a:link{
   text-decoration:none;
 }
 
-#wrapper{
-  z-index: 101;
-}
+
 
 body{
   background-color: #2b4a52;
@@ -35,6 +33,7 @@ body{
 
 .top-content{
   position: relative;
+  height: 50px;
 }
 
 .top-content li {
