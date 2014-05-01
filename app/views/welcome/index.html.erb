@@ -4,6 +4,18 @@
     <strong>Admin things</strong>:
   <% end %>
 
+<div id="dashboard">
+  New posts in my area
+  My open posts
+  My exchanges in progress
+</div>
+
+<div id="profile">
+  <h1>My Profile <%= link_to "(edit)", edit_user_path(current_user) %></h1>
+  <%= image_tag current_user.image_url %><%= current_user.name %> (<%= current_user.points %> points) - <%= current_user. location %>
+
+</div>
+
 <% else %>
 <div id="karma_app_wrapper">
   <ul id="karma_app_steps">
