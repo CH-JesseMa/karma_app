@@ -19,7 +19,7 @@ a:link{
 }
 
 #wrapper{
-  x-index: 101;
+  z-index: 101;
 }
 
 body{
@@ -86,7 +86,11 @@ input{
   cursor: pointer;
 }
 
-#title{
+.user_pic img{
+  width: 150px;
+  height: 150px;
+
+#title {
   position: absolute;
   top: -30px;
 }

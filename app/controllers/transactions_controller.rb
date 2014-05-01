@@ -1,14 +1,8 @@
 class TransactionsController < ApplicationController
 
 	def index
-		@transactions = []
-
 		if current_user
-			requests =Transaction.where(requester_id: current_user.id)
-			offers = Transaction.where(servicer_id: current_user.id)
-			@transactions << requests
-			@transactions << services
-			@transactions.flatten
+			@transactions = current_user.generate_transactions_array
 		end
 	end
 
@@ -19,16 +13,10 @@ class TransactionsController < ApplicationController
 	def create
 		post = Post.find_by(id: params[:post_id])
 		transaction = Transaction.new(post_id: post.id, point_value: post.karma_value)
-		
-		if post.post_type == "offer"
-			transaction.update(servicer_id: post.user_id, requester_id: current_user.id)
-		elsif post.post_type == "request"
-			transaction.update(requester_id: post.user_id, servicer_id: current_user.id)
-		end
+
+		transaction.populate_transaction_table(post, current_user)
 
 		if transaction.save
-			post.is_open = false
-			post.save
 			flash[:notice] = "All right!"
 			redirect_to root_path
 		else
