@@ -38,11 +38,13 @@
 
         <%= f.label :image_url, "Profile Image URL" %><br>
         <%= f.text_field :image_url %><br><br>
+
           <%= f.label :skills, "Skills" %>
           <div id="skills_field">
+          <button id="add_text_field">Add additional skills</button>
           <%= f.text_field :skills %>
-          <td id="add_text_field">Add additional skills</td>
         </div><br><br><br>
+
         <%= f.label :profile, "Profile" %><br>
         <%= f.text_field :profile %><br><br>
       </div><br>

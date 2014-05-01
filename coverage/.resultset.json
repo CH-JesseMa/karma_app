@@ -1,6 +1,18 @@
 {
   "Cucumber Features": {
     "coverage": {
+      "/Users/jessema/dev/wdi/karma_app/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jessema/dev/wdi/karma_app/app/helpers/posts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jessema/dev/wdi/karma_app/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
       "/Users/jessema/dev/wdi/karma_app/app/controllers/posts_controller.rb": [
         1,
         1,
@@ -77,11 +89,11 @@
         null,
         null,
         1,
-        56,
+        102,
         null,
         null,
         1,
-        36,
+        42,
         null,
         null,
         null,
@@ -117,6 +129,7 @@
         null,
         null,
         1,
+        0,
         null,
         null,
         null,
@@ -256,6 +269,13 @@
         0,
         0,
         null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/jessema/dev/wdi/karma_app/app/models/user.rb": [
@@ -307,14 +327,33 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
         null,
+        null,
+        1,
+        4,
+        4,
+        null,
+        4,
+        4,
+        null,
+        null,
+        4,
+        null,
+        null,
+        1,
+        4,
+        null,
+        4,
+        null,
+        4,
+        0,
+        0,
         null,
         null,
         null,
@@ -355,10 +394,18 @@
         null,
         1,
         null,
+        6,
+        4,
+        4,
+        4,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1398969194
+    "timestamp": 1398972651
   }
 }

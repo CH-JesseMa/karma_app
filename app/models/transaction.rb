@@ -32,5 +32,12 @@ class Transaction < ActiveRecord::Base
 
 		post.is_open = false
 		post.save
-	end	
+	end
+
+	def check_completion_status
+		if self.requester_complete && self.servicer_complete
+			self.update(is_complete: true)
+		end
+	end
+		
 end
