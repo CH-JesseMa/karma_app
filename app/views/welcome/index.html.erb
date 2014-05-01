@@ -14,7 +14,8 @@
 
     <h2>My open posts</h2>
       <% @open_posts.each do |post| %>
-        <p><%= link_to post.title, post_path(post) %> (<%= post.karma_value %> pts) <button class="close">Close Post</button></p>
+        <p><%= link_to post.title, post_path(post) %> (<%= post.karma_value %> pts)
+          <button class="close", id=<%= post.id %>>Close Post</button>
       <% end %>
   </div>
 
@@ -26,19 +27,20 @@
 
     <h2>My Exchanges</h2>
     <% @transactions.each do |transaction| %>
-      <h3><%= Post.find_by(id: transaction.post_id).title %> - <%= Post.find_by(id: transaction.post_id).karma_value %>
-      <% if transaction.is_complete %>
-        - Completed!
-      <% else %>
-        - Open
-      <% end %></h3>
+      <h3><%= Post.find_by(id: transaction.post_id).title %> - <%= Post.find_by(id: transaction.post_id).karma_value %></h3>
 
-      <% if (current_user.id == transaction.requester_id && !transaction.requester_complete) ||
+      <% transaction.check_completion_status %>
+      <% if transaction.is_complete %>
+        <p>Completed!</p>
+      <% else %>
+        <p>Open
+       <% if (current_user.id == transaction.requester_id && !transaction.requester_complete) ||
           (current_user.id == transaction.servicer_id && !transaction.servicer_complete) %>
-        <button class="complete">Mark As Completed</button>
+        <button class="complete", id=<%= transaction.id %>>Mark As Completed</button></p>
       <% else %>
         <strong>Confirmation Pending</strong>
       <% end %>
+     <% end %>
     <% end %>
   </div> <!-- profile wrapper -->
 </div> <!-- dashboard wrapper -->
