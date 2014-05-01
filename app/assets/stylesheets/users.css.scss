@@ -1,19 +1,21 @@
 #members_wrapper{
   position: relative;
   width: 420px;
-  height: 300px;
-  margin: 0 auto;
   padding: 20px;
+  text-align: center;
 }
 
 .members{
-  background-color: white;
+  background-color: #e9ede6;
   position: absolute;
   list-style-type: none;
   display: inline-block;
   padding: 10px;
-  margin: 0 auto;
-  width: 80%;
+  border-left: 80px solid #e9ede6;
+  border-right: 80px solid #e9ede6;
+  border-top: 20px solid #e9ede6;
+  border-bottom: 20px solid #e9ede6;
+  text-align: center;
 }
 
 .members ul{
