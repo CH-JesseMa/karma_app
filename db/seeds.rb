@@ -50,5 +50,19 @@ post5 = Post.create(karma_value: 20, post_type: "offer", title: "Can help you pl
 
 post6 = Post.create(karma_value: 60, post_type: "request", title: "I need help remaining calm", content: "Hi if you can help me relax I will pay you 60 karma points!!!!!!!", image_url: "http://keepyourprince.com/wp-content/uploads/2013/12/calmclearcomposed.jpg", user_id: russel.id )
 
-# post7 = Post.create(karma_value: 40, post_type: "offer", title: "I can help you ")
+post7 = Post.create(karma_value: 40, post_type: "offer", title: "I can help you write ruby methods", content: "Hi I can offer to help you learn to write kick ass ruby methods", image_url: "http://www.codeproject.com/KB/cross-platform/Ruby_Dynamic_Methods/Ruby_Dynamic_Methods.jpg", user_id: bill.id)
+
+post8 = Post.create(karma_value: 50, post_type: "request", title: "Need help shopping for clothes", content: "Hi I'm the fricken jolly green giant and I need a new shirt! somebody please help me out!", image_url: "http://blog.clothes2order.com/wp-content/uploads/2010/12/101991_largest_T-shirt_QAPCO.jpg", user_id: jolly.id)
+
+
+transaction1 = Transaction.create(requester_id:jolly.id, servicer_id: msmorton.id, requester_agree: true, servicer_agree: true, requester_complete: true, servicer_complete: true, point_value: 50, post_id: post8.id)
+
+transaction2 = Transaction.create(requester_id:
+  bill.id, servicer_id: russel.id, requester_agree: true, servicer_agree: true, requester_complete: false, servicer_complete: true, point_value: 40, post_id: post7.id)
+
+transaction3 = Transaction.create(requester_id: msmorton.id, servicer_id: jon.id, requester_agree: true, servicer_agree: true, requester_complete: true, servicer_complete: false, point_value: 50, post_id: post2.id )
+
+
+
+
 
