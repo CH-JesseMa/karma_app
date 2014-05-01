@@ -51,10 +51,29 @@ class User < ActiveRecord::Base
     offers = Transaction.where(servicer_id: self.id)
     transactions << requests
     transactions << offers
-    transactions.flatten
-    return transactions
+    transactions.flatten.flatten
   end
 
+  def find_local_posts
+    posts = []
+    users = User.where(location: self.location)
 
+    users.each do |user|
+      posts << user.posts
+    end
+
+    posts = posts.flatten.flatten
+  end
+
+  def return_open_posts
+    posts = self.posts
+
+    open_posts = []
+
+    posts.each do |post|
+      if post.is_open
+        open_posts << post
+      end
+    end
+  end
 end
-
