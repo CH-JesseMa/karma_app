@@ -36,16 +36,13 @@
 }
 
 
-#karma_app_wrapper{
-  position: relative;
-}
-
 #karma_app_steps{
   width: 600px;
   position: absolute;
   right: 100px;
-  border-radius: 15px;
   text-align: center;
+  background-color: #d1cac9;
+  border: 30px solid #d1cac9;
 }
 
 #karma_app_steps .steps{
