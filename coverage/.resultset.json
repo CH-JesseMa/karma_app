@@ -1,6 +1,18 @@
 {
   "Cucumber Features": {
     "coverage": {
+      "/Users/jessema/dev/wdi/karma_app/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jessema/dev/wdi/karma_app/app/helpers/posts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jessema/dev/wdi/karma_app/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
       "/Users/jessema/dev/wdi/karma_app/app/controllers/posts_controller.rb": [
         1,
         1,
@@ -77,11 +89,11 @@
         null,
         null,
         1,
-        92,
+        102,
         null,
         null,
         1,
-        30,
+        42,
         null,
         null,
         null,
@@ -257,6 +269,13 @@
         0,
         0,
         null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/jessema/dev/wdi/karma_app/app/models/user.rb": [
@@ -374,14 +393,19 @@
         1,
         null,
         1,
+        null,
         6,
         4,
         4,
+        4,
+        null,
+        null,
+        null,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1398971241
+    "timestamp": 1398972651
   }
 }

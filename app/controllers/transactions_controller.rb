@@ -32,6 +32,8 @@ class TransactionsController < ApplicationController
 	def update
 		@transaction = Transaction.find_by(id: params[:id])
 
+		@transaction.check_completion_status
+		
 		if @transaction.update(transaction_params)
 			flash[:notice] = "Right on!"
 			redirect_to root_path
