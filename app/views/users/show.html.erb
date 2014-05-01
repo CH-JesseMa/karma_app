@@ -4,7 +4,9 @@
         <%= notice %>
       </p>
 
+      <div class="user_pic">
       <%= link_to image_tag @user.image_url %>
+      </div>
       <h1><%= @user.user_name %> - (<%= @user.points %> Points)</h1>
       <h2><%= @user.name %> - <%= @user.location %></h2>
 
