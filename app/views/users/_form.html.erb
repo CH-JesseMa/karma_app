@@ -1,5 +1,4 @@
 <div class="edit_profile_wrapper">
-  <h1>Sign Up with Karma</h1>
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -16,6 +15,7 @@
     <% end %>
 
   <div class="sign_up">
+  <h1>Sign Up with Karma</h1>
     <div class="field">
       <%= f.label :user_name, "User Name*" %><br>
       <%= f.text_field :user_name, :value =>  "e.g. handyman123" %><br>
