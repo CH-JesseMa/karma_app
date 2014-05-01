@@ -22,7 +22,7 @@ Transaction.destroy_all
 # Transaction.create(requester_id: bill.id, servicer_id: jon.id)
 
 bill = User.create(name: "Bill", email: "bill@bill.com", password: "123", is_admin: true, skills: "ruby, rails
-  music", location: "brooklyn", profile: "Hi I'm Bill I can write ruby methods like a mofo! CSS? notsomuch...", image_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bill_Clinton.jpg/440px-Bill_Clinton.jpg", points: 120)
+  music", location: "brooklyn", profile: "Hi I'm Bill I can write ruby methods like a mofo! CSS? notsomuch...", image_url: "http://media.salon.com/2010/12/veganisms_unlikely_best_friend_bill_clinton.jpg", points: 120)
 
 
 nick = User.create(name: "Nick", email: "nick@nick.com", password: "123", is_admin: true, skills: "sheep-herding", location: "brooklyn", profile: "Hi I'm nick I'm a sheepherder, can you help me with javascript?", image_url: "http://dick.mckay.org/html/images/SheepHerderOnRoad.jpg", points: 100)
