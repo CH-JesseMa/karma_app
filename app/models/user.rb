@@ -45,5 +45,16 @@ class User < ActiveRecord::Base
     recipient.save
   end
 
+  def generate_transactions_array
+    transactions = []
+    requests = Transaction.where(requester_id: self.id)
+    offers = Transaction.where(servicer_id: self.id)
+    transactions << requests
+    transactions << offers
+    transactions.flatten
+    return transactions
+  end
+
+
 end
 
