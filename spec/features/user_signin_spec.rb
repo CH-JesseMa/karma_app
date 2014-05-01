@@ -27,7 +27,7 @@ feature "Signing out" do
     click_button 'Login'
     visit '/'
     click_link 'Logout'
-    expect(page).to have_selector 'a', text: "Sign Up!"
+    expect(page).to have_selector 'a', text: "Sign Up"
   end
 end
 

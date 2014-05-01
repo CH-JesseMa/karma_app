@@ -5,7 +5,7 @@ var profilePage = {
 
   postTextField: function() {
     $("#add_text_field").on("click", function() {
-      $(skills_field).after("<input id='user_profile' name='user[profile]' type='text'>").after("<br>").after("<br>");
+      $("#skills_field").after("<input id='user_profile' name='user[profile]' type='text'>").after("<br>").after("<br>");
     });
   }
 
