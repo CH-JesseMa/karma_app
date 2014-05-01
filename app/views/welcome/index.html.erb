@@ -26,6 +26,7 @@
   
   <h2>My Exchanges</h2>
   <% @transactions.each do |transaction| %>
+    <% transaction.check_completion_status %>
     <h3><%= Post.find_by(id: transaction.post_id).title %> - <%= Post.find_by(id: transaction.post_id).karma_value %>
     <% if transaction.is_complete %>
       - Completed!
