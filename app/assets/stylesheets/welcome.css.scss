@@ -4,13 +4,33 @@
 
 #dashboard_wrapper{
   position: absolute;
-  left: 240px;
+  width: 200px;
+  left: 200px;
   background-color: #e9ede6;
   border-left: 100px solid #e9ede6;
   border-right: 100px solid #e9ede6;
   border-top: 20px solid #e9ede6;
   border-bottom: 20px solid #e9ede6;
   text-align: center;
+  top: 200px;
+}
+
+#profile_wrapper{
+  position: absolute;
+  right: 0px;
+  text-align: left;
+  color: #e9ede6;
+}
+
+#profile_wrapper img{
+  min-width: 300px;
+  width: 30%;
+  height: 30%;
+
+}
+
+#profile_wrapper p {
+  max-width: 300px;
 }
 
 #shashboard_wrapper button{
