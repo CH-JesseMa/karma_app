@@ -43,6 +43,8 @@ class User < ActiveRecord::Base
 
     recipient.points += amount 
     recipient.save
+
+    return self.points
   end
 
   def generate_transactions_array

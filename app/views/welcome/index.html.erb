@@ -29,7 +29,18 @@
     <% @transactions.each do |transaction| %>
       <h3><%= Post.find_by(id: transaction.post_id).title %> - <%= Post.find_by(id: transaction.post_id).karma_value %></h3>
 
+      <% if Post.find_by(id: transaction.post_id).post_type == "offer" %>
+        <h4>Offer</h4>
+        <p>Offered by: <%= User.find_by(id: transaction.servicer_id).user_name %> |
+          Accepted by: <%= User.find_by(id: transaction.requester_id).user_name %></p>
+      <% elsif Post.find_by(id: transaction.post_id).post_type == "request" %>
+        <h4>Request</h4>
+        <p>Requested by: <%= User.find_by(id: transaction.requester_id).user_name %> |
+          Accepted by: <%= User.find_by(id: transaction.servicer_id).user_name %></p>
+      <% end %>
+      
       <% transaction.check_completion_status %>
+
       <% if transaction.is_complete %>
         <p>Completed!</p>
       <% else %>
