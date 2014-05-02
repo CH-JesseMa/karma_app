@@ -33,10 +33,12 @@ class TransactionsController < ApplicationController
 		@transaction = Transaction.find_by(id: params[:id])
 
 		if params[:motive] == "complete_transaction"
-			@transaction.confirm_completion(current_user.id)
+			what_are_the_odds = @transaction.confirm_completion(current_user.id)
 
+			binding.pry
+			
 		    respond_to do |format|
-	        	format.json { render json: @post }
+	        	format.json { render json: { post: @post, user: current_user } }
 	      	end
 		end		
 	end

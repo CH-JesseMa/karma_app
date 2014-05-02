@@ -3,8 +3,8 @@
     <h1><%= @post.title %> (<%= @post.post_type %>)</h1>
 
     <div class="user_pic">
-      <img src="<%= @post.image_url %>">
-    </div><!-- user pic -- >
+      <img src=<%= @post.image_url %>>
+    </div>
 
     <p><%= @post.content %></p>
 
@@ -32,6 +32,7 @@
           <%= button_to('Delete Comment', post_comment_path(@post, comment), method: :delete) %>
         <% end %>
       <% end %>
+<<<<<<< HEAD
   <h2>Add a comment:</h2>
 
     <%= form_for([@post, @post.comments.build]) do |f| %>
@@ -40,3 +41,8 @@
       <p><%= @post.content %></p>
     <% end %>
     </div>
+=======
+
+  </div><!-- post_listing -->
+</div><!-- post_listing_wrapper  -->
+>>>>>>> cleaning_up_views
