@@ -38,7 +38,7 @@ feature "Admin signing in" do
     fill_in 'email', :with => 'gladiator@gmail.com'
     fill_in 'password', :with => 'maximus'
     click_button 'Login'
-    expect(page).to have_content("Admin things:")
+    expect(page).to have_content("Legal")
   end
 end
 
