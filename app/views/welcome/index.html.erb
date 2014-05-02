@@ -42,7 +42,7 @@
         <p>Requested by: <%= User.find_by(id: transaction.requester_id).user_name %> |
           Accepted by: <%= User.find_by(id: transaction.servicer_id).user_name %></p>
       <% end %>
-      
+
       <% transaction.check_completion_status %>
 
       <% if transaction.is_complete %>
