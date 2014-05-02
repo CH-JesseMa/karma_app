@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'visit root' do
   it 'should have content' do
     visit root_path
-    expect(page).to have_content("Karma")
+    expect(page).to have_content("Get Started")
   end
 end
 
