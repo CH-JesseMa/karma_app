@@ -32,17 +32,8 @@
           <%= button_to('Delete Comment', post_comment_path(@post, comment), method: :delete) %>
         <% end %>
       <% end %>
-<<<<<<< HEAD
-  <h2>Add a comment:</h2>
 
-    <%= form_for([@post, @post.comments.build]) do |f| %>
-      <h1><%= @post.title %> - <%= @post.post_type %> - (<%= @post.karma_value %> Points)</h1>
-      <h2><%= @user.user_name %> - <%= @user.location %></h2>
-      <p><%= @post.content %></p>
-    <% end %>
-    </div>
-=======
 
   </div><!-- post_listing -->
 </div><!-- post_listing_wrapper  -->
->>>>>>> cleaning_up_views
+
