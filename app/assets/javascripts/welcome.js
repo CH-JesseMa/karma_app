@@ -30,7 +30,6 @@ var dashboard = {
 				context: this 
 			}).done( function(data) {
 				var parent = $(this).parent();
-
 				$(this).remove();
 				parent.append("<p>").text("Completed");
 			});
