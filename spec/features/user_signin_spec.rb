@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'visit root' do
   it 'should have content' do
     visit root_path
-    expect(page).to have_content("Karma")
+    expect(page).to have_content("Get Started")
   end
 end
 
@@ -28,6 +28,17 @@ feature "Signing out" do
     visit '/'
     click_link 'Logout'
     expect(page).to have_selector 'a', text: "Sign Up"
+  end
+end
+
+feature "Admin signing in" do
+  scenario "Signing in with admin credentials" do
+    user = User.create(user_name: "Spaniard", email: "gladiator@gmail.com", password: "maximus", password_confirmation: "maximus", is_admin: true)
+    visit '/login'
+    fill_in 'email', :with => 'gladiator@gmail.com'
+    fill_in 'password', :with => 'maximus'
+    click_button 'Login'
+    expect(page).to have_content("Legal")
   end
 end
 

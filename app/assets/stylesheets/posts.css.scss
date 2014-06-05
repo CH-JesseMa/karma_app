@@ -16,15 +16,13 @@
   padding: 10px;
 }
 
-#post_listing_wrapper{
-  position: relative;
-}
-
 .post_listing{
   position: absolute;
   right: 350px;
-}
+  border: 30px solid #d1cac9;
+  background-color: #d1cac9;
 
+}
 
 .posts{
   position: relative;
@@ -41,6 +39,14 @@
 
 #posts_header{
   padding-left: 10px;
+}
+
+#requests{
+
+}
+
+#offers{
+
 }
 
 #show_offers{

@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-.members{
+.members {
   background-color: #e9ede6;
   position: absolute;
   list-style-type: none;
@@ -63,8 +63,10 @@
 
 .profile{
   position: absolute;
-  top: 40px;
+  top: 100px;
   left: 400px;
+  border: 20px solid #e9ede6;
+  background-color: #e9ede6;
 }
 
 .profile p a{

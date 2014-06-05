@@ -1,57 +1,76 @@
 <% if logged_in? %>
 
   <% if current_user.is_admin %>
-    <strong>Admin things</strong>:
+    <strong>You are Logged in as an Admin.</strong>
   <% end %>
-<div id="dashboard_wrapper">
-  <div id="dashboard">
-    <h2>New Posts In My Area</h2>
-      <% @local_posts.each do |post| %>
-        <% if post.is_open %>
-          <p><%= post.title %> - (<%= post.karma_value %> pts) <%= link_to "(view post)", post_path(post) %></p>
+  <div id="dashboard_wrapper">
+    <div id="dashboard">
+      <h2>New Posts In My Area</h2>
+        <% @local_posts.each do |post| %>
+          <% if post.is_open %>
+            <p><%= post.title %> - (<%= post.karma_value %> pts) <%= link_to "(view post)", post_path(post) %></p>
+          <% end %>
         <% end %>
-      <% end %>
 
-    <h2>My open posts</h2>
-      <% @open_posts.each do |post| %>
-        <p><%= link_to post.title, post_path(post) %> (<%= post.karma_value %> pts) <button class="close">Close Post</button></p>
-      <% end %>
-  </div>
+      <h2>My open posts</h2>
+        <% @open_posts.each do |post| %>
+          <p><%= link_to post.title, post_path(post) %> (<%= post.karma_value %> pts)
+            <button class="close", id="<%= post.id %>">Close Post</button>
+        <% end %>
+    </div>
+  </div> <!-- dashboard wrapper -->
 
-  <div id="profile">
+  <div id="profile_wrapper">
+    <div id="profile">
     <h1>My Profile <%= link_to "(edit)", edit_user_path(current_user) %></h1>
-    <%= image_tag current_user.image_url %><%= current_user.name %> (<%= current_user.points %> points) - <%= current_user. location %>
+    <%= image_tag current_user.image_url %><br>
+    <%= current_user.name %> (<%= current_user.points %> points) - <%= current_user. location %>
+    <br>
     <p><%= current_user.profile %></p>
     <p><%= current_user.skills %></p>
 
     <h2>My Exchanges</h2>
     <% @transactions.each do |transaction| %>
-      <h3><%= Post.find_by(id: transaction.post_id).title %> - <%= Post.find_by(id: transaction.post_id).karma_value %>
-      <% if transaction.is_complete %>
-        - Completed!
-      <% else %>
-        - Open
-      <% end %></h3>
+      <h3><%= Post.find_by(id: transaction.post_id).title %> - <%= Post.find_by(id: transaction.post_id).karma_value %></h3>
 
-      <% if (current_user.id == transaction.requester_id && !transaction.requester_complete) ||
-          (current_user.id == transaction.servicer_id && !transaction.servicer_complete) %>
-        <button class="complete">Mark As Completed</button>
-      <% else %>
-        <strong>Confirmation Pending</strong>
+      <% if Post.find_by(id: transaction.post_id).post_type == "offer" %>
+        <h4>Offer</h4>
+        <p>Offered by: <%= User.find_by(id: transaction.servicer_id).user_name %> |
+          Accepted by: <%= User.find_by(id: transaction.requester_id).user_name %></p>
+      <% elsif Post.find_by(id: transaction.post_id).post_type == "request" %>
+        <h4>Request</h4>
+        <p>Requested by: <%= User.find_by(id: transaction.requester_id).user_name %> |
+          Accepted by: <%= User.find_by(id: transaction.servicer_id).user_name %></p>
       <% end %>
-    <% end %>
+
+      <% transaction.check_completion_status %>
+
+      <% if transaction.is_complete %>
+        <p>Completed!</p>
+      <% else %>
+        <p>Open
+        <% if (current_user.id == transaction.requester_id && !transaction.requester_complete) ||
+          (current_user.id == transaction.servicer_id && !transaction.servicer_complete) %>
+          <button class="complete", id="<%= transaction.id %>">Mark As Completed</button></p>
+        <% else %>
+          <strong>Confirmation Pending</strong>
+        <% end %>
+      <% end %>
+     <% end %>
+   </div>
   </div> <!-- profile wrapper -->
-</div> <!-- dashboard wrapper -->
 
 <% else %>
+
   <div id="karma_app_wrapper">
-    <ul id="karma_app_steps">
-    <h1 id="get_started">Get Started</h1>
-      <li class="steps">Open a Karma Account</li>
-      <li class="steps">Help someone out and earn some karma</li>
-      <li class="steps">Feel good about yourself being an awesome person</li>
-      <li class="steps">Spend some Karma and get help from someone else</li>
-      <li class="steps">Repeat Steps 2 - 5 and be a happy person!</li>
-    </ul>
+    <div id="sliderFrame">
+        <div id="slider">
+            <%= image_tag "1.png", alt: "Step 1 - Open a Karma account" %>
+            <%= image_tag "2.png", alt: "Step 2 - Help someone out and earn some karma" %>
+            <%= image_tag "3.png", alt: "Step 3 - Feel good about yourself being an awesome person" %>
+            <%= image_tag "4.png", alt: "Step 4 - Get help from someone else" %>
+            <%= image_tag "5.png", alt: "Step 5 - Be a happier person!" %>
+        </div>
+    </div>
   </div><!-- karma app wrapper -->
 <% end %>

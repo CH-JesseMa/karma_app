@@ -32,15 +32,13 @@ class TransactionsController < ApplicationController
 	def update
 		@transaction = Transaction.find_by(id: params[:id])
 
-		@transaction.check_completion_status
-		
-		if @transaction.update(transaction_params)
-			flash[:notice] = "Right on!"
-			redirect_to root_path
-		else
-			flash[:notice] = "This is a bummer, man."
-			render[:edit]
-		end
+		if params[:motive] == "complete_transaction"
+			@transaction.confirm_completion(current_user.id)
+
+		    respond_to do |format|
+	        	format.json { render json: { post: @post, user: current_user } }
+	      	end
+		end		
 	end
 
 	private

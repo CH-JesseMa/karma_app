@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = User.find_by(id: @post.user_id)
+    @comment = Comment.new
   end
 
   def edit
@@ -32,7 +33,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
-      redirect_to @post
+      respond_to do |format|
+        format.html { redirect_to @post }
+        format.json { render json: @post }
+      end
     else
       render 'edit'
     end

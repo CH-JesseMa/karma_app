@@ -1,5 +1,4 @@
-<div id="profile_wrapper">
-  <div class="profile">
+  <div class="points_transfer">
     <h1>You have <%= current_user.points %> points to send!</h1>
 
     <%= form_tag("/points_transfer", method: "POST") do %>
@@ -10,6 +9,6 @@
       <%= submit_tag("Send Points!") %>
     <% end %>
   </div><!-- profile -->
-</div><!-- profile wrapper   -->
+
 
 
