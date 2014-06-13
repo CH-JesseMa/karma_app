@@ -1,28 +1,23 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Karma</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-        <div class="top-content">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-          <div class="logo">
-          <a href="/"><img src="http://i.imgur.com/vMScxcg.png"></a>
-        </div><!-- logo -->
-          <%= render 'banner' %>
-            <div class="background">
-              <%= render 'sidebar' %>
-      </div> <!-- top-content -->
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
 
-  <%= yield %>
-        </div><!-- background -->
+  </head>
 
-
+  <body>
+    <a href="/"><img src="http://i.imgur.com/vMScxcg.png"></a>
+    <%= render 'banner' %>
+    <%= render 'sidebar' %>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>
-
-
