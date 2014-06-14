@@ -1,19 +1,15 @@
-<div id="sidebar_wrapper">
-	<div class="sidebar">
+	<div class="tabs vertical">
 	<ul>
 		<% if logged_in? %>
-			<li class="banner_list_item"> <%= link_to "Dashboard", root_path %> </li>
-			<li class="banner_list_item"> <%= link_to "Send Karma", new_points_transfer_path %></li>
+			<dd class="banner_list_item"> <%= link_to "Dashboard", root_path %> </dd>
+			<dd class="banner_list_item"> <%= link_to "Send Karma", new_points_transfer_path %></dd>
 		<% else %>
-			<li class="banner_list_item"> <%= link_to "Get Started", root_path %> </li>
+			<dd class="banner_list_item"> <%= link_to "Get Started", root_path %> </dd>
 		<% end %>
-		<li class="banner_list_item"><%= link_to "Services", posts_path %> </li>
-		<li class="banner_list_item"><%= link_to "Our Members", users_path %></li>
-		<li class="banner_list_item"><a href="/faq">FAQ</a></li>
-		<li class="banner_list_item"><a href="/contact">Contact Us</a></li>
-		<li class="banner_list_item"><a href="/legal">Legal</a></li>
+		<dd class="banner_list_item"><%= link_to "Services", posts_path %> </dd>
+		<dd class="banner_list_item"><%= link_to "Our Members", users_path %></dd>
+		<dd class="banner_list_item"><a href="/faq">FAQ</a></dd>
+		<dd class="banner_list_item"><a href="/contact">Contact Us</a></dd>
+		<dd class="banner_list_item"><a href="/legal">Legal</a></dd>
 	</ul>
 	</div><!-- sidebar -->
-</div><!-- sidebar_wrapper -->
-
-

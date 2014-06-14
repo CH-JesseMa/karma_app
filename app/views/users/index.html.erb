@@ -1,27 +1,27 @@
-  <div id="members_wrapper">
-      <div class="members">
-        <h1>Our Members</h1>
-            <table>
-              <tr>
-                <th>Avatar</th>
-                <th>User Name</th>
-                <th>Name</th>
-                <th>Karma Points</th>
-                <th>Location</th>
-                <th>Skills</th>
-              </tr>
+  <div id="members_wrapper small-4 large-7 columns">
+    <div class="members">
+      <h1>Our Members</h1>
+        <table>
+          <tr>
+            <th>Avatar</th>
+            <th>User Name</th>
+            <th>Name</th>
+            <th>Karma Points</th>
+            <th>Location</th>
+            <th>Skills</th>
+          </tr>
 
-              <% @users.each do |user| %>
-                <tr>
-                    <td><img src=" <%= user.image_url %>" width="85px" alt="<%= user.name %>"></td>
-                    <td><a href="<%= user_path(user) %>"><%= user.user_name %></a></td>
-                    <td><%= user.name %></td>
-                    <td><%= user.points %> pts.</td>
-                    <td><%= user.location %></td>
-                    <td><%= user.skills %></td>
-                </tr>
-              <% end %>
+          <% @users.each do |user| %>
+            <tr>
+              <td><img src=" <%= user.image_url %>" width="85px" alt="<%= user.name %>"></td>
+              <td><a href="<%= user_path(user) %>"><%= user.user_name %></a></td>
+              <td><%= user.name %></td>
+              <td><%= user.points %> pts.</td>
+              <td><%= user.location %></td>
+              <td><%= user.skills %></td>
+            </tr>
+          <% end %>
 
-            </table>
+      </table>
     </div><!-- members -->
   </div><!-- members wrapper   -->

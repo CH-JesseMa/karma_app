@@ -1,4 +1,4 @@
-<div class="edit_profile_wrapper">
+<div class="sign-up-form">
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -14,29 +14,26 @@
       </div>
     <% end %>
 
-  <div class="sign_up">
-  <h1>Sign Up with Karma</h1>
-    <div class="field">
-      <%= f.label :user_name, "User Name*" %><br>
-      <%= f.text_field :user_name, :value =>  "e.g. handyman123" %><br>
+    <div class="small-4 large-7 columns">
+      <div class="sign-up">
+        <h1 class="text-center">Sign Up with Karma</h1>
+        <%= f.label :user_name, "User Name*" %><br>
+        <%= f.text_field :user_name, :value =>  "e.g. handyman123" %><br>
 
-      <%= f.label :image_url, "Profile Image URL" %><br>
-      <%= f.text_field :image_url, :value => "e.g. http://i.imgur.com/3gaud8r.png" %><br>
+        <%= f.label :image_url, "Profile Image URL" %><br>
+        <%= f.text_field :image_url, :value => "e.g. http://i.imgur.com/3gaud8r.png" %><br>
 
-      <%= f.label :email, "Email*" %><br>
-      <%= f.text_field :email, :value => "e.g. handyman123@gmail.com" %><br>
+        <%= f.label :email, "Email*" %><br>
+        <%= f.text_field :email, :value => "e.g. handyman123@gmail.com" %><br>
 
-      <%= f.label :password, "Password*" %><br>
-      <%= f.password_field :password %><br>
+        <%= f.label :password, "Password*" %><br>
+        <%= f.password_field :password %><br>
 
-      <%= f.label :password_confirmation, "Confirm Password*" %><br>
-      <%= f.password_field :password_confirmation %><br>
+        <%= f.label :password_confirmation, "Confirm Password*" %><br>
+        <%= f.password_field :password_confirmation %><br>
+
+        <%= f.submit "Sign Up", class: "button expand" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Sign Up" %>
-    </div>
-  </div><!-- sign up -->
-</div><!-- sign up wrapper -->
-<% end %>
-
+  <% end %>
+</div>

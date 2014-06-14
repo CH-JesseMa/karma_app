@@ -1,13 +1,23 @@
-<div id="banner_wrapper">
-<ul id="banner">
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="/"><img src="http://i.imgur.com/vMScxcg.png"></a></h1>
+    </li>
+    <!-- <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li> -->
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
 <% if logged_in? %>
 		<li class="banner_element" id="points">Welcome <%= link_to current_user.user_name, user_path(current_user) %> (<%= current_user.points %> points)</li>
-    <li class="banner_element"><%= link_to "Add a new post!", new_post_path %></li>
-    <li class="banner_element"><%= link_to "Logout", logout_path %></li>
+		<li class="banner_element"><%= link_to "Add a new post!", new_post_path %></li>
+		<li class="banner_element"><%= link_to "Logout", logout_path %></li>
 	<% else %>
 		<li class="banner_element"><%= link_to "Sign Up", new_user_path %></li>
-    <li class="banner_element">    |  </li>
 		<li class="banner_element"><%= link_to "Sign In ", login_path %></li>
 	<% end %>
-</ul>
-</div>
+    </ul>
+
+  </section>
+</nav>

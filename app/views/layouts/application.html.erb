@@ -14,10 +14,14 @@
   </head>
 
   <body>
-    <a href="/"><img src="http://i.imgur.com/vMScxcg.png"></a>
+
     <%= render 'banner' %>
     <%= render 'sidebar' %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
+
+    <footer>
+    </footer>
+
   </body>
 </html>
