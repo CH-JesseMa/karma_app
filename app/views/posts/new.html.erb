@@ -1,50 +1,49 @@
-<div id="add_posting wrapper">
-  <div class="add_posting">
-    <h2>Add Your Posting</h2>
+<div class="add_posting small-4 large-7 columns">
 
-      <%= form_for :post, url: posts_path do |f| %>
+  <h2>Add Your Posting</h2>
 
-        <% if @post.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@post.errors.count, "error") %> kept
-              this posting from being saved:</h2>
-            <ul>
-            <% @post.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-            </ul>
-          </div>
-        <% end %>
+    <%= form_for :post, url: posts_path do |f| %>
 
-        <p>
-          <%= f.label :title %><br>
-          <%= f.text_field :title %>
-        </p>
-
-        <p>
-          <%= f.label :content %><br>
-          <%= f.text_area :content %>
-        </p>
-
-        <p>
-          <%= f.label :image_url, "Add an image..." %><br>
-          <%= f.text_field :image_url %>
-        </p>
-
-        <p>
-          <%= f.label(:karma_value, "Amount of Points") %>
-          <%= f.number_field(:karma_value) %>
-        </p>
-
-          <%= f.radio_button(:post_type, "offer") %>
-          <%= f.label(:post_type, "I'm offering services") %>
-          <%= f.radio_button(:post_type, "request") %>
-          <%= f.label(:post_type, "I'm requesting services") %>
-
-        <p>
-          <%= f.submit %>
-        </p>
+      <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> kept
+            this posting from being saved:</h2>
+          <ul>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
 
-  </div><!-- add posting -->
-</div><!-- add posting wrapper -->
+      <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </p>
+
+      <p>
+        <%= f.label :content %><br>
+        <%= f.text_area :content %>
+      </p>
+
+      <p>
+        <%= f.label :image_url, "Add an image..." %><br>
+        <%= f.text_field :image_url %>
+      </p>
+
+      <p>
+        <%= f.label(:karma_value, "Amount of Points") %>
+        <%= f.number_field(:karma_value) %>
+      </p>
+
+        <%= f.radio_button(:post_type, "offer") %>
+        <%= f.label(:post_type, "I'm offering services") %>
+        <%= f.radio_button(:post_type, "request") %>
+        <%= f.label(:post_type, "I'm requesting services") %>
+
+      <p><br>
+        <%= f.submit class: "button" %>
+      </p>
+    <% end %>
+
+</div><!-- add posting -->

@@ -1,3 +1,48 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#posts_controller {
+  background-color: #2b3452;
+
+  .post_listing, .add_posting {
+    margin-left: 40px;
+    background-color: white;
+  }
+
+  h3 {
+    padding: 20px;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+  }
+
+  .posts {
+    margin-left: 40px;
+    background-color: white;
+    height: 100%;
+    text-align: center;
+  }
+
+  .post{
+    margin: 10px 0 10px 0;
+  }
+
+  #requests, #offers {
+    color: black;
+    h1 {
+      color: black;
+      padding: 10px;
+    }
+  }
+
+  #posts_header{
+    color: black;
+  }
+
+  #show_offers, #show_requests{
+    padding: 20px;
+    margin: 10px;
+  }
+
+  #user_pic {
+    max-width: 400px;
+    max-height: 300px;
+  }
+
+}

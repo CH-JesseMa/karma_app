@@ -1,3 +1,50 @@
-.sign-up {
-    padding-left: 50px;
+#users_controller {
+
+  .profile_show {
+    margin-left: 40px;
   }
+
+  label {
+    color: #2b3452;
+    font-weight: 900;
+  }
+
+  h1 {
+    color: #2b3452;
+  }
+
+  #error_explanation {
+    margin: 0 auto;
+    width: 50%;
+    h2{
+      font-size: 18px;
+      color: red;
+      padding: 5px;
+    }
+  }
+
+  .sign_up{
+    margin: 0 auto;
+    color: #2b3452;
+  }
+
+  #edit_user {
+    position: relative;
+  }
+
+  #edit_other {
+    position: relative;
+  }
+
+  #edit_header {
+    position: relative;
+    display: inline;
+  }
+
+} //end users_controller
+
+
+
+
+
+

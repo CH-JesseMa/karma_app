@@ -1,5 +1,5 @@
 <div class="profile_show small-4 large-7 columns">
-  <div class="profile">
+
       <p id="notice">
         <%= notice %>
       </p>
@@ -7,6 +7,7 @@
       <div class="user_pic">
       <%= link_to image_tag @user.image_url %>
       </div>
+
       <h1><%= @user.user_name %> - (<%= @user.points %> Points)</h1>
       <h2><%= @user.name %> - <%= @user.location %></h2>
 
@@ -15,14 +16,11 @@
 
       <!-- shows all the users postings on their profile page -->
       <% @user.posts.each do |post| %>
-      <%= link_to post.title, post_path(post) %>,
-      (<%= post.karma_value %> Karma Points) <br>
-                  <% end %>
+       <%= link_to post.title, post_path(post) %>,
+       (<%= post.karma_value %> Karma Points) <br>
+       <% end %>
 
       <% if @user == current_user %>
-      	<%= link_to 'Edit', edit_user_path(@user) %>
+      	<%= link_to 'Edit', edit_user_path(@user), class: "button" %>
       <% end %>
-      <%= link_to 'Back', users_path %>
-      <%= link_to "Dashboard", root_path %>
-  </div><!-- profile -->
 </div>

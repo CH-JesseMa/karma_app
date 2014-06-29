@@ -10,17 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
- *= require foundation_and_overrides
-
  */
 
+@import "welcome.css.scss";
+@import "users.css.scss";
+@import "banner.css.scss";
+@import "nav.css.scss";
+@import "posts.css.scss";
+@import "session.css.scss";
+@import "js-image-slider.css.scss";
+@import "foundation_and_overrides.scss"
 
- $color-light-brown: #a69382;
- $color-light-grey: #b3b3ad;
- $color-dark-blue: #2b4a52;
- $color-pale-pink: #d1cac9;
- $color-off-white: #e9ede6;
- $color-light-blue: #86a8b5;
- $color-grey: #999999;
+
+
+

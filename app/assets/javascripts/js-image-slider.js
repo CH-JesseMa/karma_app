@@ -2,7 +2,7 @@ var sliderOptions=
 {
 	sliderId: "slider",
 	startSlide: 0,
-	effect: "series1",
+	effect: "series2",
 	effectRandom: false,
 	pauseTime: 2600,
 	transitionTime: 500,
@@ -10,10 +10,10 @@ var sliderOptions=
 	boxes: 8,
 	hoverPause: 1,
 	autoAdvance: true,
-	captionOpacity: 0.5,
+	captionOpacity: 0.7,
 	captionEffect: "fade",
 	thumbnailsWrapperId: "thumbs",
-	m: false,
+	m: true,
 	license: "b6t80"
 };
 

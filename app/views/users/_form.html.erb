@@ -1,5 +1,5 @@
-<div class="sign-up-form">
   <%= form_for(@user) do |f| %>
+
     <% if @user.errors.any? %>
       <div id="error_explanation">
         <h2>
@@ -14,26 +14,29 @@
       </div>
     <% end %>
 
-    <div class="small-4 large-7 columns">
-      <div class="sign-up">
-        <h1 class="text-center">Sign Up with Karma</h1>
-        <%= f.label :user_name, "User Name*" %><br>
-        <%= f.text_field :user_name, :value =>  "e.g. handyman123" %><br>
+    <div class="sign-up small-4 large-7 columns">
 
-        <%= f.label :image_url, "Profile Image URL" %><br>
-        <%= f.text_field :image_url, :value => "e.g. http://i.imgur.com/3gaud8r.png" %><br>
+      <h1 class="text-center">Sign Up with Karma</h1>
 
-        <%= f.label :email, "Email*" %><br>
-        <%= f.text_field :email, :value => "e.g. handyman123@gmail.com" %><br>
+      <%= f.label :user_name, "User Name*" %>
+      <%= f.text_field :user_name, :placeholder =>  "e.g. handyman123" %>
 
-        <%= f.label :password, "Password*" %><br>
-        <%= f.password_field :password %><br>
+      <%= f.label :image_url, "Profile Image URL" %>
+      <%= f.text_field :image_url, :placeholder => "e.g http://i.imgur.com/3gaud8r.png", :value => "http://i.imgur.com/3gaud8r.png" %>
 
-        <%= f.label :password_confirmation, "Confirm Password*" %><br>
-        <%= f.password_field :password_confirmation %><br>
+      <%= f.label :email, "Email*" %>
+      <%= f.text_field :email, :placeholder => "e.g. handyman123@gmail.com" %>
 
-        <%= f.submit "Sign Up", class: "button expand" %>
+      <%= f.label :password, "Password*" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirm Password*" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Sign Up", class: "button expand" %>
+
     </div>
 
-  <% end %>
-</div>
+
+<% end %>
+

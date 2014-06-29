@@ -1,24 +1,24 @@
-  <div class="post_listing small-4 large-5 columns">
+<div class="post_listing small-4 large-7 columns">
 
-    <h1><%= @post.title %> (<%= @post.post_type %>)</h1>
+  <h3><%= @post.title %> (<%= @post.post_type %>)</h3>
 
-    <div class="user_pic">
-      <img src=<%= @post.image_url %>>
-    </div>
+  <div id="user_pic">
+    <img src="<%= @post.image_url %>">
+  </div><br>
 
-    <p><%= @post.content %></p>
+  <p><%= @post.content %></p>
 
-    <% if logged_in? && current_user != User.find_by(id: @post.user_id) %>
-      <%= form_tag("/transactions", method: "post") do %>
-        <%= hidden_field_tag(:post_id, params[:id]) %>
-        <%= submit_tag("Sounds awesome, sign me up!") %>
-      <% end %>
+  <% if logged_in? && current_user != User.find_by(id: @post.user_id) %>
+    <%= form_tag("/transactions", method: "post") do %>
+      <%= hidden_field_tag(:post_id, params[:id]) %>
+      <%= submit_tag "Sounds awesome, sign me up!", class: "button" %>
     <% end %>
+  <% end %>
 
-    <% if current_user && (current_user.id == @post.user_id) %>
-      <%= link_to 'Edit', edit_post_path(@post) %>
-      <%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete %>
-    <% end %>
+  <% if current_user && (current_user.id == @post.user_id) %>
+    <%= link_to 'Edit', edit_post_path(@post) %>
+    <%= button_to 'Delete',  { action: "destroy", id: @post.id }, method: :delete, class: "button" %>
+  <% end %>
 
-  </div><!-- post_listing -->
-</div><!-- post_listing_wrapper  -->
+</div><!-- post_listing -->
+

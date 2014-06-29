@@ -13,15 +13,12 @@
 
   </head>
 
-  <body>
+  <body id="<%= params[:controller].parameterize %>_controller">
 
     <%= render 'banner' %>
     <%= render 'sidebar' %>
     <%= yield %>
     <%= javascript_include_tag "application" %>
-
-    <footer>
-    </footer>
 
   </body>
 </html>

@@ -1,4 +1,25 @@
-#bottom-banner {
-  position: relative;
-  bottom: 0px;
-}
+#welcome_controller {
+
+  background: url('TFOBellevue.jpg');
+  background-size: cover;
+
+
+  #dashboard {
+    margin-left: 60px;
+    background-color: white;
+    min-height: 480px;
+  }
+
+  #profile {
+    margin-right: 60px;
+    background-color: white;
+    min-height: 480px;
+  }
+
+  #faq, #contact, #legal {
+    text-align: center;
+    margin: 40px;
+    background-color: white;
+  }
+
+} //end welcome controller

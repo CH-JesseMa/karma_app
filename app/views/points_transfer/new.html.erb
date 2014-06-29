@@ -1,12 +1,12 @@
   <div class="points_transfer">
-    <h1>You have <%= current_user.points %> points to send!</h1>
 
-    <%= form_tag("/points_transfer", method: "POST") do %>
+    <%= form_tag("/points_transfer", method: "POST", class: "small-4 large-7 columns") do %>
+    <h1 class="text-center">You have <%= current_user.points %> points to send!</h1>
       <%= label_tag(:recipient, "User Name") %>
       <%= text_field_tag(:recipient) %>
       <%= label_tag(:amount, "Amount of Points") %>
       <%= number_field_tag(:amount) %>
-      <%= submit_tag("Send Points!") %>
+      <%= submit_tag "Send Points!", class: "button expand" %>
     <% end %>
   </div><!-- profile -->
 
