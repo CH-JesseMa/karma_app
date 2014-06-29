@@ -27,3 +27,4 @@ To Do:
 *fix comments
 *enable user to change background image of their profile
 *implement paperclip for image upload
+*set colors to variables w/ sass
